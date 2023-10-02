@@ -52,3 +52,7 @@ CONVENZIONI COMMIT SIMIL ANGULAR:
 - style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 
 - test: Adding missing tests or correcting existing tests
+
+BEST PRACTISES:
+
+- Ogni volta che si aggiunge un percorso, controllare che esso sia presente nel tailwind.config.ts, se non c'è aggiungerlo.
