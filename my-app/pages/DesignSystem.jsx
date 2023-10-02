@@ -6,7 +6,9 @@ export default function DesignSystem() {
   return (
     <div>
       <Stack spacing={2} direction="row">
-        <Button variant="text">Text</Button>
+        <Button variant="text" className="bg-black hover:bg-slate-800 text-red-600">
+          Text
+        </Button>
         <Button variant="contained">Contained</Button>
         <Button variant="outlined">Outlined</Button>
       </Stack>
