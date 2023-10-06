@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['"Kanit, sans-serif"'],
+        secondary: ["Playfair Display"],
+      },
+      fontSize: {
+        default: "18px",
+        header: "40px",
+        "sub-header": "32px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -18,4 +27,4 @@ const config: Config = {
   },
   plugins: [],
 };
-export default config
+export default config;
