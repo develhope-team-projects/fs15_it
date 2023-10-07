@@ -22,6 +22,7 @@ export default function Home() {
         <div className="navbar relative flex items-center p-3 justify-between">
           <div className="navbar-background absolute bg-black opacity-10 h-full w-full p-0 m-0 "></div>
           <div className="flex items-center ml-8">
+            {/* Cliccare sul logo riporta alla home page */}
             <Link href="/" className="mr-4 flex items-center z-50">
               <Image
                 src="/Logo.svg"

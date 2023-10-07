@@ -1,6 +1,6 @@
 # Proposta modifiche
 
-- Nel tailwind.config.js, aggiunto questo a theme: { extend: {
+1. Nel tailwind.config.js, aggiunto questo a theme: { extend: {
 
 colors: {
 
@@ -10,17 +10,25 @@ buttons: "#228E99",
 
 },
 
-- Aggiunto questo file nella cartella /public:
+---
+
+2. Aggiunto questo file nella cartella /public:
 
 ### [background top image.jpg](https://github.com/jefreve/fs15-last-project/blob/main/my-app/public/background%20top%20image.jpg)
 
-- Cancellato cartella /pages
-- Creato src/app/components, dentro cui ho spostato Pulsante e usePulsante.jsx
-- Creato src/app/design-system, dentro cui ora c'è page.jsx, che prima si chiamava DesignSystem.jsx e stava dentro a /pages
+---
+
+I punti 3, 4, 5 sono collegati:
+
+3. Cancellato cartella /pages
+
+4. Creato src/app/components, dentro cui ho spostato Pulsante e usePulsante.jsx
+
+5. Creato src/app/design-system, dentro cui ora c'è page.jsx, che prima si chiamava DesignSystem.jsx e stava dentro a /pages
 
 Questi 3 cambiamenti sono stati fatti perché:
 
-![](https://t9004115569.p.clickup-attachments.com/t9004115569/489bbe45-5f04-44c1-97a9-1b37e06a225b/src%20Directory.png)
+![Alt text](<my-app/public/src Directory.png>)
 
 (Link della documentazione da cui è preso questo screenshot: [https://nextjs.org/docs/app/building-your-application/configuring/src-director](https://nextjs.org/docs/app/building-your-application/configuring/src-directory) )
 
@@ -30,15 +38,25 @@ Ora navigando a [http://localhost:3000/design-system](http://localhost:3000/desi
 
 si può vedere il Design System
 
-- Aggiunto background image a home page
+---
 
-- Navbar iniziata: Logo, link al design system, scritta "sign up", pulsante "Log in"
+6. Aggiunto background image a home page
 
-- Aggiunti Link per navigare a Home e Design System
+---
 
-- Cambiato colore background e hover:bg di Pulsante
+7. Navbar iniziata: Logo, link al design system, scritta "sign up", pulsante "Log in"
 
-- Cambiato il modo di accedere ai loghi delle icone
+---
+
+8. Aggiunti Link per navigare a Home e Design System
+
+---
+
+9. Cambiato colore background e hover:bg di Pulsante
+
+---
+
+10. Cambiato il modo di accedere ai loghi delle icone
 
 al posto che fare import delle immagini nella cartella public, così:
 
@@ -60,4 +78,4 @@ _height_\="25"
 
 />
 
-Quindi modificato per tutte le icone svg e rimossi gli import che stavano in cima
+Quindi, nel file src/design-system/page.jsx modificato per tutte le icone svg e rimossi gli import che stavano in cima
