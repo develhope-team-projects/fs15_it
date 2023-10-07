@@ -1,29 +1,44 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
-import logoFirst from "../public/logos1.png";
-import logoSecond from "../public/logos3.png";
-import logo from "../public/Logo.svg";
-import Pulsante from "./Pulsante";
+import Pulsante from "../components/Pulsante";
 import { Typography } from "@mui/material";
-import facebook from "../public/facebook.svg";
-import instagram from "../public/instagram.svg";
-import twitter from "../public/twitter.svg";
-import gmail from "../public/gmail.svg";
-import whatsapp from "../public/whatsapp.svg";
-import tiktok from "../public/tiktok.svg";
+import Link from "next/link";
 
 export default function DesignSystem() {
   return (
-    <div className="bg-[#0D111D] text-white font-body p-8 h-screen">
-      <h1 className="text-header mb-8 text-center">Design System</h1>
-      <div className="grid grid-cols-2 grid-rows-2 gap-8">
+    <div className="bg-[#0D111D] text-white font-body h-screen text-default">
+      <div className="navbar relative flex items-center p-3 justify-between">
+        <div className="navbar-background absolute bg-black opacity-10 h-full w-full p-0 m-0 "></div>
+        <div className="flex items-center ml-8">
+          <Link href="/" className="mr-4 flex items-center z-50">
+            <Image src="/Logo.svg" alt="" className="" width="50" height="50" />
+            <Typography className="font-body text-default ml-2">
+              SoundBridge
+            </Typography>
+          </Link>
+          |
+          <Link href="./design-system" className="ml-4 z-50">
+            Design System
+          </Link>
+        </div>
+
+        {/* <div className="flex mr-8">
+          <Link href="./design-system" className="mx-4 flex items-center z-50">
+            Sign Up
+          </Link>
+          <Pulsante content="Log in"></Pulsante>
+        </div> */}
+      </div>
+      <hr />
+      <h1 className="text-header mt-4 mb-8 text-center">Design System</h1>
+      <div className="grid grid-cols-2 grid-rows-2 gap-8 p-8">
         <div className="border-[0.2px] border-white rounded-lg p-4">
           <h3 className="text-sub-header mb-4 underline underline-offset-8">
             Logo
           </h3>
           <div className="flex w-96 items-center  text-white">
-            <Image src={logo} alt="" className="" width="50" height="50" />
+            <Image src="Logo.svg" alt="" className="" width="50" height="50" />
             <Typography className="font-body text-default ml-2">
               SoundBridge
             </Typography>
@@ -44,7 +59,7 @@ export default function DesignSystem() {
           <div className="flex gap-4">
             <div className="rounded-2xl bg-[#1877F2]">
               <Image
-                src={facebook}
+                src="/facebook.svg"
                 alt=""
                 className=""
                 width="25"
@@ -52,11 +67,41 @@ export default function DesignSystem() {
               />
             </div>
 
-            <Image src={twitter} alt="" className="" width="25" height="25" />
-            <Image src={tiktok} alt="" className="" width="25" height="25" />
-            <Image src={gmail} alt="" className="" width="25" height="25" />
-            <Image src={whatsapp} alt="" className="" width="25" height="25" />
-            <Image src={instagram} alt="" className="" width="25" height="25" />
+            <Image
+              src="/twitter.svg"
+              alt=""
+              className=""
+              width="25"
+              height="25"
+            />
+            <Image
+              src="/tiktok.svg"
+              alt=""
+              className=""
+              width="25"
+              height="25"
+            />
+            <Image
+              src="/gmail.svg"
+              alt=""
+              className=""
+              width="25"
+              height="25"
+            />
+            <Image
+              src="/whatsapp.svg"
+              alt=""
+              className=""
+              width="25"
+              height="25"
+            />
+            <Image
+              src="/instagram.svg"
+              alt=""
+              className=""
+              width="25"
+              height="25"
+            />
           </div>
         </div>
         <div className="border-[0.2px] border-white rounded-lg p-4">

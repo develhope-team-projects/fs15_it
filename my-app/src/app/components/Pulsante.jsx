@@ -7,7 +7,7 @@ export default function Pulsante({ content = "Default" }) {
   return (
     <Button
       variant="contained"
-      className="bg-blue-500 hover:bg-blue-600 text-white font-body text-default"
+      className="bg-buttons hover:bg-buttons-hover text-white hover:text-zinc-300 font-body text-default rounded-3xl py-0"
     >
       {content}
     </Button>
