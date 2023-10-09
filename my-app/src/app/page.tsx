@@ -1,6 +1,4 @@
 import Image from "next/image";
-import logoFirst from "/logos1.png";
-import logoSecond from "/logos3.png";
 import Link from "next/link";
 import { Typography } from "@mui/material";
 import Pulsante from "./components/Pulsante";
@@ -52,6 +50,5 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
