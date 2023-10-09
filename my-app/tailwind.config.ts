@@ -13,6 +13,10 @@ const config: Config = {
         body: ['"Kanit, sans-serif"'],
         secondary: ["Playfair Display"],
       },
+      colors: {
+        buttons: "#228E99",
+        "buttons-hover": "#1B737B",
+      },
       fontSize: {
         default: "18px",
         header: "40px",
