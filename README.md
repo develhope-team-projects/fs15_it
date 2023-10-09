@@ -56,3 +56,5 @@ CONVENZIONI COMMIT SIMIL ANGULAR:
 BEST PRACTISES:
 
 - Ogni volta che si aggiunge un percorso, controllare che esso sia presente nel tailwind.config.ts, se non c'è aggiungerlo.
+
+- Per le funzioni specifiche utilizzare le props direttamente nel componente, mentre per le funzioni comuni utilizzare il custom Hook.
