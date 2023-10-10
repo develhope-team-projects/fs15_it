@@ -3,11 +3,11 @@
 
 import Button from "@mui/material/Button";
 
-export default function Pulsante({ content = "Default" }) {
+export default function Pulsante({ content = "Default", color, colorhover }) {
   return (
     <Button
       variant="contained"
-      className="bg-buttons hover:bg-buttons-hover text-white hover:text-zinc-300 font-body text-default rounded-3xl py-0"
+      className={`bg-${color} hover:${colorhover} shadow-[0px_0px_1px_2px] hover:shadow-[0px_0px_1px_2px] text-white  font-body text-default rounded-3xl py-0`}
     >
       {content}
     </Button>

@@ -14,8 +14,12 @@ const config: Config = {
         secondary: ["Playfair Display"],
       },
       colors: {
-        buttons: "#228E99",
-        "buttons-hover": "#1B737B",
+        button: " #7a857b",
+        "button-hover": "#626A62",
+        "button-button-shadow-base": "#2d8634",
+        "button-green-shadow-hover": "#206125",
+        "button-red-shadow-base": "#ff0048",
+        "button-red-shadow-hover": "#b30033",
       },
       fontSize: {
         default: "18px",
