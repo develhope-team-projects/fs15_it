@@ -29,9 +29,9 @@ export default function Navbar() {
             Design System
           </Link>
         </div>
-        <div className="flex mr-4">
-          <div className="flex mr-8">
-            <Link href="" className="mx-4 flex items-center z-50">
+        <div className="flex mr-12">
+          <div className="flex mr-2">
+            <Link href="" className="mx-6 flex items-center z-50">
               Sign Up
             </Link>
             <Pulsante content="Log in" color="" colorhover=""></Pulsante>
