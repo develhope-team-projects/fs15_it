@@ -1,9 +1,17 @@
-import { Typography } from "@mui/material";
+"use client";
+import { MenuItem, Select, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Pulsante from "../Pulsante";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [language, setLanguage] = useState("en");
+
+  function handleLanguageChange(event) {
+    setLanguage(event.target.value);
+  }
+
   return (
     <div className="z-10">
       <div className="navbar relative flex items-center p-3 justify-between">
@@ -28,6 +36,32 @@ export default function Navbar() {
           </Link>
           <Pulsante content="Log in" color="" colorhover=""></Pulsante>
         </div>
+
+        <Select
+          inputProps={{
+            IconComponent: () => null,
+            MenuProps: {
+              MenuListProps: {
+                sx: {
+                  backgroundColor: "black",
+                },
+              },
+            },
+          }}
+          value={language}
+          label="Language"
+          onChange={handleLanguageChange}
+          className="text-white"
+          variant="standard"
+          disableUnderline
+        >
+          <MenuItem value={"en"}>
+            <Image alt="en" src="/gb.svg" width="28" height="28" />
+          </MenuItem>
+          <MenuItem value={"it"}>
+            <Image alt="en" src="/it.svg" width="28" height="28" />
+          </MenuItem>
+        </Select>
       </div>
     </div>
   );
