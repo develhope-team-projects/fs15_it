@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function CardPlayerHome({ content = "Default", cover, slider }) {
   return (
     <>
-      <div className="border border-white flex-col bg-gray-200 p-4 rounded-3xl shadow-[1px_2px_10px_1px] shadow-slate-600 h-[310px] w-52 justify-center hover:bg-white hover:shadow-slate-500 transition duration-300 ease-in-out">
+      <div className="border border-white flex-col bg-gray-200 p-4 rounded-3xl shadow-[1px_2px_10px_1px] shadow-gray-500 h-[310px] w-52 justify-center hover:bg-white hover:shadow-gray-600 transition duration-300 ease-in-out ">
         <Image src={cover} alt="" className="p-3" width="170" height="170" />
 
         <Typography className="text-black pb-3 text-center">
@@ -13,7 +13,7 @@ export default function CardPlayerHome({ content = "Default", cover, slider }) {
         </Typography>
         <div className="pb-1 pt-1">
           <div className="h-2 w-full bg-slate-400 rounded-lg flex items-center shadow-[1px_2px_1px_1px] shadow-slate-300  ">
-            <div className={`h-2 w-${slider} bg-slate-600 rounded-lg`}></div>
+            <div className={`h-2 w-${slider} bg-slate-700 rounded-lg`}></div>
           </div>
         </div>
 

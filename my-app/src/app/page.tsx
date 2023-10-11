@@ -5,9 +5,15 @@ import Pulsante from "./components/Pulsante";
 import CardPlayerHome from "./components/cardplayerhome";
 import img1 from "../../public/drakedogs.png";
 import img2 from "../../public/kendrickllamar.jpg";
-import img3 from "../../public/Metro_Boomin_–_Not_All_Heroes_Wear_Capes.png";
+import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
-import backgrounddiscover from "../../public/sfondo-temp-discoverartist.jpg";
+
+const cardData = [
+  { content: "Drake-ABC", cover: img1.src, slider: "1/2" },
+  { content: "Kendrick-ABC", cover: img2.src, slider: "40" },
+  { content: "Metro-ABC", cover: img3.src, slider: "36" },
+  { content: "Kid Cudi-ABC", cover: img4.src, slider: "full" },
+];
 
 export default function Home() {
   return (
@@ -66,21 +72,25 @@ export default function Home() {
           <Image
             src="/sfondo-temp-discoverartist.jpg"
             alt=""
-            height="5865"
-            width="3915"
+            height="1920"
+            width="1080"
             className="w-full h-full m-0 p-0"
           />
         </div>
 
-        <Typography className="text-white text-7xl p-20 text-center">
+        <Typography className="text-white text-7xl p-20 text-center text-shadow-lg shadow-gray-500">
           Discover New Artists
         </Typography>
       </div>
-      <div className="flex flex-wrap flex-row gap-32 p-12 ml-10 w-[800px] h-[600px] relative">
-        <CardPlayerHome content="Drake-ABC" cover={img1.src} slider={32} />
-        <CardPlayerHome content="Kendrick-ABC" cover={img2.src} slider={36} />
-        <CardPlayerHome content="Metro-ABC" cover={img3.src} slider={12} />
-        <CardPlayerHome content="Kid Cudi-ABC" cover={img4.src} slider={24} />
+      <div className="flex flex-wrap flex-row gap-32 p-12 ml-10 w-[700px] h-[600px] relative">
+        {cardData.map((data, index) => (
+          <CardPlayerHome
+            key={index}
+            content={data.content}
+            cover={data.cover}
+            slider={data.slider}
+          />
+        ))}
       </div>
     </>
   );
