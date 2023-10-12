@@ -3,9 +3,8 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -14,7 +13,7 @@ const config: Config = {
         secondary: ["Playfair Display"],
       },
       colors: {
-        button: " #7a857b",
+        "button-color-base": "#7a857b",
         "button-hover": "#626A62",
         "button-button-shadow-base": "#2d8634",
         "button-green-shadow-hover": "#206125",

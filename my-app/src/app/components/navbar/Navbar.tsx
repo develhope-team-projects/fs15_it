@@ -1,5 +1,5 @@
 "use client";
-import { MenuItem, Select, Typography } from "@mui/material";
+import { MenuItem, Select, SelectChangeEvent, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Pulsante from "../Pulsante";
@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [language, setLanguage] = useState("en");
 
-  function handleLanguageChange(event) {
+  function handleLanguageChange(event: SelectChangeEvent<string>) {
     setLanguage(event.target.value);
   }
 
@@ -18,24 +18,41 @@ export default function Navbar() {
         <div className="navbar-background absolute bg-black opacity-20 h-full w-full p-0 m-0 left-0 shadow-md shadow-zinc-500"></div>
         <div className="flex items-center ml-8">
           {/* Cliccare sul logo riporta alla home page */}
-          <Link href="/" className="mr-4 flex items-center z-50">
-            <Image src="/Logo.svg" alt="" className="" width="50" height="50" />
-            <Typography className="font-body text-default ml-2">
+          <Link href="/" className="mr-4 flex items-center z-50 ">
+            <Image
+              src="/Logo.svg"
+              alt=""
+              className="min-w-[50px]"
+              width="50"
+              height="50"
+            />
+            <Typography className="font-body text-default ml-2 hidden md:flex">
               SoundBridge
             </Typography>
           </Link>
-          |
+
           <Link href="./design-system" className="ml-4 z-50">
             Design System
           </Link>
         </div>
+
+        {/* Desktop sign up and login  */}
         <div className="flex mr-12">
           <div className="flex mr-2">
-            <Link href="" className="mx-6 flex items-center z-50">
+            <Link href="" className="mx-6 items-center z-50 hidden sm:flex">
               Sign Up
             </Link>
-            <Pulsante content="Log in" color="" colorhover=""></Pulsante>
+            <div className="hidden sm:block">
+              <Pulsante
+                content="Log in"
+                color="button-color-base"
+                colorhover="button-hover"
+              ></Pulsante>
+            </div>
           </div>
+
+          {/* mobile hamburger menu */}
+          <div className="flex sm:hidden">Ciao</div>
 
           <Select
             inputProps={{
