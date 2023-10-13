@@ -46,7 +46,14 @@ export default function Home() {
             >
               Sign Up
             </Link>
-            <Pulsante content="Log in"></Pulsante>
+            <Pulsante content="Log in" color={""} colorhover={""} />
+          </div>
+        </div>
+        {/* TITLES */}
+        <div className="section-homepage w-1/2 mt-5 p-8">
+          <div className="title-homepage">
+            <h1 className="text-8xl">Where music meets collaboration</h1>
+            <h2 className="text-5xl mt-7">Join the revolution</h2>
           </div>
         </div>
       </div>
