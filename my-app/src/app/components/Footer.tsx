@@ -13,14 +13,14 @@ export default function Footer() {
               <Image
                 src="/googleplay.png"
                 alt=""
-                className="mb-4 mt-10"
+                className="mb-4 mt-10 cursor-pointer"
                 width="200"
                 height="25"
               />
               <Image
                 src="/appstore (1).png"
                 alt=""
-                className=""
+                className="cursor-pointer"
                 width="200"
                 height="25"
               />
