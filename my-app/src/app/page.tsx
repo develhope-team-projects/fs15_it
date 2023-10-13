@@ -49,6 +49,7 @@ export default function Home() {
             <Pulsante content="Log in" color={""} colorhover={""} />
           </div>
         </div>
+        {/* TITLES */}
         <div className="section-homepage w-1/2 mt-5 p-8">
           <div className="title-homepage">
             <h1 className="text-8xl">Where music meets collaboration</h1>
