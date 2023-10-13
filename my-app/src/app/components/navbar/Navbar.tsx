@@ -9,13 +9,12 @@ import {
   Paper,
   Popper,
   MenuList,
-  Button,
   IconButton,
 } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Pulsante from "../Pulsante";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Navbar() {
