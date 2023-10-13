@@ -1,17 +1,14 @@
 import React from "react";
-import Typography from "@mui/joy/Typography";
 
-const MockupTitle = () => {
+const MockupTitle = ({ customText = "Discover our features!" }) => {
   return (
-    <Typography
+    <p
       /* color="primary" */
-      level="h1"
-      noWrap={false}
-      variant="plain"
-      className="text-center text-6xl text-gray-300 content-center"
+
+      className="text-center text-6xl text-gray-300 content-center font-bold"
     >
-      Discover our features!
-    </Typography>
+      {customText}
+    </p>
   );
 };
 
