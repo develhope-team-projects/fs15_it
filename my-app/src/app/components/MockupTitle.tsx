@@ -1,11 +1,19 @@
 import React from "react";
 
-const MockupTitle = ({ customText = "Discover our features!" }) => {
+interface MockupTitleProps {
+  customText?: string;
+  customColor?: string;
+}
+
+const MockupTitle: React.FC<MockupTitleProps> = ({
+  customText = "Discover our features!",
+  customColor = "text-white",
+}) => {
   return (
     <p
       /* color="primary" */
 
-      className="text-center text-6xl text-gray-300 content-center font-bold"
+      className={`text-center text-6xl ${customColor} content-center font-bold`}
     >
       {customText}
     </p>
