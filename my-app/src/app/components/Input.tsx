@@ -52,7 +52,7 @@ export default function InputField() {
         <TextField
           id="outlined-basic"
           label="Outlined"
-          placeholder="Placeholder"
+          placeholder='placeholder'
           size="small"
           InputProps={{
             startAdornment: (
