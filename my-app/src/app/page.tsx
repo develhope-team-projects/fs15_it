@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
-import MockupTitle from "./components/MockupTitle";
+
+import HeroMockup from "./components/hero-mockup/HeroMockup";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <MockupTitle/>
+      <HeroMockup />
     </div>
   );
 }
