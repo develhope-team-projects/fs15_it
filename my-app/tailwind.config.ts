@@ -23,8 +23,8 @@ const config: Config = {
       },
       fontSize: {
         default: "18px",
-        header: "40px",
-        "sub-header": "32px",
+        header: "60px",
+        "sub-header": "40px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

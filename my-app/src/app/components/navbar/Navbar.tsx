@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import Pulsante from "../Pulsante";
 import { SoundBridgeLogo } from "./SoundBridgeLogo";
@@ -17,10 +16,6 @@ export default function Navbar() {
 
           {/* Clicking on Logo takes you to Home page*/}
           <SoundBridgeLogo />
-
-          <Link href="/design-system" className="ml-2 z-50 hover:text-zinc-300">
-            Design System
-          </Link>
         </div>
 
         {/* Desktop sign up and login  */}

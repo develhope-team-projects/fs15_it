@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Typography } from "@mui/material";
-import Pulsante from "./components/Pulsante";
 import Navbar from "./components/navbar/Navbar";
 
 export default function Home() {
@@ -18,15 +15,13 @@ export default function Home() {
       </div>
 
       <Navbar />
-        {/* TITLES */}
-        <div className="section-homepage w-1/2 mt-5 p-8">
-          <div className="title-homepage">
-            <h1 className="text-8xl">Where music meets collaboration</h1>
-            <h2 className="text-5xl mt-7">Join the revolution</h2>
-          </div>
+      {/* TITLES */}
+      <div className="section-homepage w-1/2 mt-5 p-8">
+        <div className="title-homepage">
+          <h1 className="text-header">Where music meets collaboration</h1>
+          <h2 className="text-sub-header mt-7">Join the revolution</h2>
         </div>
       </div>
-
     </div>
   );
 }
