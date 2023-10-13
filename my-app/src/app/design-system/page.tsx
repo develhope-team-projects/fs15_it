@@ -9,7 +9,7 @@ export default function DesignSystem() {
   return (
     <div className="bg-[#0D111D] text-white font-body h-screen text-default">
       <div className="navbar relative flex items-center p-3 justify-between">
-        <div className="navbar-background absolute bg-black opacity-10 h-full w-full p-0 m-0 "></div>
+        <div className="navbar-background absolute bg-black opacity-20 h-full w-full p-0 m-0 "></div>
         <div className="flex items-center ml-8">
           <Link href="/" className="mr-4 flex items-center z-50">
             <Image src="/Logo.svg" alt="" className="" width="50" height="50" />
