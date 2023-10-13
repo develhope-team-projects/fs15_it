@@ -16,7 +16,17 @@ export default function Home() {
           className="w-full h-full m-0 p-0"
         />
       </div>
+
       <Navbar />
+        {/* TITLES */}
+        <div className="section-homepage w-1/2 mt-5 p-8">
+          <div className="title-homepage">
+            <h1 className="text-8xl">Where music meets collaboration</h1>
+            <h2 className="text-5xl mt-7">Join the revolution</h2>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
