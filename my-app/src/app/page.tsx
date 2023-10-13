@@ -19,7 +19,17 @@ const cardData = [
 
 export default function Home() {
   return (
-    <div>
+    <div className="m-0 p-0 box-border">
+      <div className=" text-white font-body h-screen text-default m-0">
+        <div className="background-image absolute h-screen w-screen m-0 p-0 -z-10">
+          <Image
+            src="/background top image.jpg"
+            alt=""
+            height="5865"
+            width="3915"
+            className="w-full h-full m-0 p-0"
+          />
+        </div>
         <Navbar />
         {/* TITLES */}
         <div className="section-homepage w-1/2 mt-5 p-8">
@@ -30,8 +40,8 @@ export default function Home() {
         </div>
       </div>
       <HeroMockup />
-      <div className="flex background-image  ">
-        <div className="background-image absolute h-screen w-screen m-0 p-0 -z-10 ">
+      <div className="flex background-image ">
+        <div className="background-image absolute w-full  m-0 p-0 -z-10 ">
           <Image
             src="/sfondo-temp-discoverartist.jpg"
             alt=""
@@ -45,7 +55,7 @@ export default function Home() {
           Discover New Artists
         </Typography>
       </div>
-      <div className="flex flex-wrap flex-row gap-32 p-12 ml-10 w-[700px] h-[600px] relative">
+      <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative">
         {cardData.map((data, index) => (
           <CardPlayerHome
             key={index}
