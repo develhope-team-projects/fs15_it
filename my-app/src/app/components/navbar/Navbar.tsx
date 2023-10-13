@@ -63,11 +63,11 @@ export default function Navbar() {
 
   return (
     <div className="z-10">
-      <div className="navbar relative flex items-center p-3 justify-between">
+      <div className="navbar relative flex items-center py-3 justify-between">
         <div className="navbar-background absolute bg-black opacity-20 h-full w-full p-0 m-0 left-0 shadow-md shadow-zinc-500"></div>
         <div className="flex items-center ml-1 sm:ml-8">
           {/* Hamburger Menu with sign up and login */}
-          <div className="flex sm:hidden ">
+          <div className="hamburger-menu flex sm:hidden">
             <IconButton
               ref={anchorRef}
               id="composition-button"
@@ -76,7 +76,10 @@ export default function Navbar() {
               aria-haspopup="true"
               onClick={handleToggle}
             >
-              <MenuIcon className="text-white" fontSize="large" />
+              <MenuIcon
+                className="text-white hover:text-zinc-300"
+                fontSize="large"
+              />
             </IconButton>
             <Popper
               open={open}
@@ -94,7 +97,8 @@ export default function Navbar() {
                       placement === "bottom-start" ? "left top" : "left bottom",
                   }}
                 >
-                  <Paper className="bg-transparent text-white">
+                  <Paper className="bg-transparent text-white relative top-3.5 -left-1">
+                    {/* alternatively, it can be done with bg-black or another color  */}
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList
                         autoFocusItem={open}
@@ -102,10 +106,16 @@ export default function Navbar() {
                         aria-labelledby="composition-button"
                         onKeyDown={handleListKeyDown}
                       >
-                        <MenuItem onClick={handleClose}>
+                        <MenuItem
+                          onClick={handleClose}
+                          className="hover:bg-zinc-800 rounded-md"
+                        >
                           <Link href="/signup">Sign up</Link>
                         </MenuItem>
-                        <MenuItem onClick={handleClose}>
+                        <MenuItem
+                          onClick={handleClose}
+                          className="hover:bg-zinc-800 rounded-md"
+                        >
                           <Link href="/login-page">Login</Link>
                         </MenuItem>
                       </MenuList>
@@ -117,29 +127,33 @@ export default function Navbar() {
           </div>
           {/* Clicking on Logo takes you to Home page*/}
           <Link href="/" className="mr-2 flex items-center z-50 ">
-            <Image
-              src="/Logo.svg"
-              alt=""
-              className="min-w-[50px]"
-              width="50"
-              height="50"
-            />
-            <Typography className="font-body text-default ml-2 hidden md:flex">
+            <div className="relative">
+              <div className="bg-zinc-800 opacity-0 hover:opacity-20 md:hover:opacity-0 w-full h-full absolute rounded-full"></div>
+              <Image
+                src="/Logo.svg"
+                alt=""
+                className="min-w-[50px]"
+                width="50"
+                height="50"
+              />
+            </div>
+
+            <Typography className="font-body text-default ml-2 hidden md:flex hover:text-zinc-300">
               SoundBridge
             </Typography>
           </Link>
 
-          <Link href="/design-system" className="ml-2 z-50">
+          <Link href="/design-system" className="ml-2 z-50 hover:text-zinc-300">
             Design System
           </Link>
         </div>
 
         {/* Desktop sign up and login  */}
-        <div className="flex mr-4 sm:mr-12 items-center">
+        <div className="flex mr-1 sm:mr-4 items-center">
           <div className="flex mr-2">
             <Link
               href="/signup"
-              className="mx-6 items-center z-50 hidden sm:flex"
+              className="mx-6 items-center z-50 hidden sm:flex hover:text-zinc-300"
             >
               Sign Up
             </Link>
@@ -174,26 +188,26 @@ export default function Navbar() {
             value={language}
             label="Language"
             onChange={handleLanguageChange}
-            className="text-white relative top-[2px] border-0 ml-0"
+            className="text-white relative top-[2px] border-0 ml-4"
             variant="standard"
             disableUnderline
           >
-            <MenuItem value={"en"} className="mt-2">
+            <MenuItem value={"en"} className="">
               <Image
                 alt="en"
                 src="/gb.svg"
                 width="28"
                 height="28"
-                className="absolute left-1/2"
+                className=""
               />
             </MenuItem>
-            <MenuItem value={"it"} className="mt-6">
+            <MenuItem value={"it"} className="">
               <Image
                 alt="en"
                 src="/it.svg"
                 width="28"
                 height="28"
-                className="absolute left-1/2"
+                className=""
               />
             </MenuItem>
           </Select>
