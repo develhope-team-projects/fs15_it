@@ -1,15 +1,13 @@
-
 import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
-import Link from "next/link";
 import { Typography } from "@mui/material";
-import Pulsante from "./components/Pulsante";
 import CardPlayerHome from "./components/cardplayerhome";
 import img1 from "../../public/drakedogs.png";
 import img2 from "../../public/kendrickllamar.jpg";
 import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
+import NewsLetterSection from "./components/NewsLetterSection";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
@@ -41,6 +39,7 @@ export default function Home() {
         </div>
       </div>
       <HeroMockup />
+
       <div className="flex background-image ">
         <div className="background-image absolute w-full  m-0 p-0 -z-10 ">
           <Image
@@ -56,7 +55,11 @@ export default function Home() {
           Discover New Artists
         </Typography>
       </div>
-      <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative">
+      {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
+      unire in un unico div l'img di background e
+      le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
+      Suggerimento di Vinc: 'Quindi levarlo dal div delle card :-)' */}
+      <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-24">
         {cardData.map((data, index) => (
           <CardPlayerHome
             key={index}
@@ -65,6 +68,9 @@ export default function Home() {
             slider={data.slider}
           />
         ))}
+      </div>
+      <div className="bg-[#0c111c]">
+        <NewsLetterSection />
       </div>
     </div>
   );
