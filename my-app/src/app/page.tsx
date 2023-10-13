@@ -9,9 +9,9 @@ import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
 
 const cardData = [
-  { content: "Drake-ABC", cover: img1.src, slider: "1/2" },
-  { content: "Kendrick-ABC", cover: img2.src, slider: "40" },
-  { content: "Metro-ABC", cover: img3.src, slider: "36" },
+  { content: "Drake-ABC", cover: img1.src, slider: "24" },
+  { content: "Kendrick-ABC", cover: img2.src, slider: 12 },
+  { content: "Metro-ABC", cover: img3.src, slider: 36 },
   { content: "Kid Cudi-ABC", cover: img4.src, slider: "full" },
 ];
 
