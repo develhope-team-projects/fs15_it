@@ -13,7 +13,7 @@ const MockupTitle: React.FC<MockupTitleProps> = ({
     <p
       /* color="primary" */
 
-      className={`text-center text-6xl ${customColor} content-center font-bold`}
+      className={`text-center text-6xl ${customColor} content-center font-bold font-secondary`}
     >
       {customText}
     </p>
