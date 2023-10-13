@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
@@ -9,6 +8,7 @@ import img2 from "../../public/kendrickllamar.jpg";
 import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "./components/NewsLetterSection";
+import Footer from "./components/Footer";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
@@ -70,8 +70,9 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="bg-[#0c111c]">
+      <div className="bg-gradient-to-b from-[#0c111c] to-black">
         <NewsLetterSection />
+        <Footer />
       </div>
     </div>
   );
