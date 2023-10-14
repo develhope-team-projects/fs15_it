@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
@@ -17,6 +18,11 @@ const cardData = [
   { content: "Kid Cudi-ABC", cover: img4.src, slider: "full" },
 ];
 
+const menuElementsArray = [
+  { content: "Sign Up", linkHref: "/signup" },
+  { content: "Login", linkHref: "/login-page" },
+];
+
 export default function Home() {
   return (
     <div className="m-0 p-0 box-border">
@@ -30,7 +36,9 @@ export default function Home() {
             className="w-full h-full m-0 p-0"
           />
         </div>
-        <Navbar />
+
+        <Navbar hamburgerMenuElements={menuElementsArray} />
+
         {/* TITLES */}
         <div className="section-homepage w-1/2 mt-5 p-8">
           <div className="title-homepage">

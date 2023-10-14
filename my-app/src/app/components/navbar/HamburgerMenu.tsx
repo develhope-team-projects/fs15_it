@@ -11,7 +11,16 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export function HamburgerMenu() {
+interface menuElement {
+  content: string;
+  linkHref: string;
+}
+
+interface HamburgerMenuProps {
+  menuItems: menuElement[];
+}
+
+export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
 
@@ -84,12 +93,13 @@ export function HamburgerMenu() {
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem className="hover:bg-zinc-700 rounded-md">
-                    <Link href="/signup">Sign up</Link>
-                  </MenuItem>
-                  <MenuItem className="hover:bg-zinc-700 rounded-md">
-                    <Link href="/login-page">Login</Link>
-                  </MenuItem>
+                  {menuItems.map((menuItem) => {
+                    return (
+                      <MenuItem className="hover:bg-zinc-700 rounded-md">
+                        <Link href={menuItem.linkHref}>{menuItem.content}</Link>
+                      </MenuItem>
+                    );
+                  })}
                 </MenuList>
               </ClickAwayListener>
             </Paper>

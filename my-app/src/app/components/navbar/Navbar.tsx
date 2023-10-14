@@ -5,14 +5,23 @@ import { SoundBridgeLogo } from "./SoundBridgeLogo";
 import { LanguageSelect } from "./LanguageSelect";
 import { HamburgerMenu } from "./HamburgerMenu";
 
-export default function Navbar() {
+interface menuElement {
+  content: string;
+  linkHref: string;
+}
+
+interface NavbarProps {
+  hamburgerMenuElements: menuElement[];
+}
+
+export default function Navbar({ hamburgerMenuElements }: NavbarProps) {
   return (
     <div className="z-10">
       <div className="navbar relative flex items-center py-3 justify-between">
         <div className="navbar-background absolute bg-black opacity-20 h-full w-full p-0 m-0 left-0 shadow-md shadow-zinc-500"></div>
         <div className="flex items-center ml-1 sm:ml-8">
           {/* Hamburger Menu with sign up and login, visible in mobile layout */}
-          <HamburgerMenu />
+          <HamburgerMenu menuItems={hamburgerMenuElements} />
 
           {/* Clicking on Logo takes you to Home page*/}
           <SoundBridgeLogo />
