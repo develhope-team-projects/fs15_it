@@ -16,7 +16,7 @@ export function LanguageSelect() {
         MenuProps: {
           PaperProps: {
             sx: {
-              backgroundColor: "transparent",
+              backgroundColor: "black",
             },
           },
           MenuListProps: {
