@@ -16,12 +16,13 @@ export function LanguageSelect() {
         MenuProps: {
           PaperProps: {
             sx: {
-              backgroundColor: "black",
+              backgroundColor: "transparent",
             },
           },
           MenuListProps: {
             sx: {
               width: "65px",
+              backgroundColor: "rgba(0, 0, 0, 0.92)",
             },
           },
         },

@@ -87,13 +87,14 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
               // the dropdown appears and disappears from the top left corner
             }}
           >
-            <Paper className="bg-black text-white relative top-3 -left-1">
+            <Paper className="bg-transparent  text-white relative top-3 -left-1">
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
                   id="composition-menu"
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
+                  className="bg-[rgba(0,_0,_0,_0.92)]"
                 >
                   {menuItems.map((menuItem) => {
                     return (
