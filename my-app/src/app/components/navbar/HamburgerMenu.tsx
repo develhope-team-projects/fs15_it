@@ -84,8 +84,7 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
               // the dropdown appears and disappears from the top left corner
             }}
           >
-            <Paper className="bg-transparent text-white relative top-3.5 -left-1">
-              {/* alternatively, it can be done with bg-black or another color  */}
+            <Paper className="bg-black text-white relative top-3 -left-1">
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
