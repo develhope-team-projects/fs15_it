@@ -59,7 +59,10 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
         onClick={handleToggle}
       >
         {/* this is the hamburger menu icon  */}
-        <MenuIcon className="text-white hover:text-zinc-300" fontSize="large" />
+        <MenuIcon
+          className="text-white hover:text-zinc-300 "
+          fontSize="large"
+        />
       </IconButton>
       <Popper
         open={open}
@@ -94,8 +97,10 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
                 >
                   {menuItems.map((menuItem) => {
                     return (
-                      <MenuItem className="hover:bg-zinc-700 rounded-md">
-                        <Link href={menuItem.linkHref}>{menuItem.content}</Link>
+                      <MenuItem className="hover:bg-zinc-700 transition-colors ease-in-out hover:text-blue-400 rounded-md">
+                        <Link href={menuItem.linkHref} className="">
+                          {menuItem.content}
+                        </Link>
                       </MenuItem>
                     );
                   })}
