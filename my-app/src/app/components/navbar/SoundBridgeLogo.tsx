@@ -16,7 +16,7 @@ export function SoundBridgeLogo() {
         />
       </div>
 
-      <Typography className="font-body text-default ml-2 hidden md:flex hover:text-zinc-300">
+      <Typography className="font-body text-default ml-2 hidden md:flex text-white hover:text-blue-400 transition-colors ease-in-out">
         SoundBridge
       </Typography>
     </Link>

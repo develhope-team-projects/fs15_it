@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
@@ -30,7 +31,9 @@ export default function Home() {
             className="w-full h-full m-0 p-0"
           />
         </div>
+
         <Navbar />
+
         {/* TITLES */}
         <div className="section-homepage w-1/2 mt-5 p-8">
           <div className="title-homepage">

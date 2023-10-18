@@ -11,7 +11,16 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export function HamburgerMenu() {
+interface menuElement {
+  content: string;
+  linkHref: string;
+}
+
+interface HamburgerMenuProps {
+  menuItems: menuElement[];
+}
+
+export function HamburgerMenu({ menuItems }: HamburgerMenuProps) {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
 
@@ -50,7 +59,10 @@ export function HamburgerMenu() {
         onClick={handleToggle}
       >
         {/* this is the hamburger menu icon  */}
-        <MenuIcon className="text-white hover:text-zinc-300" fontSize="large" />
+        <MenuIcon
+          className="text-white hover:text-zinc-300 "
+          fontSize="large"
+        />
       </IconButton>
       <Popper
         open={open}
@@ -75,21 +87,24 @@ export function HamburgerMenu() {
               // the dropdown appears and disappears from the top left corner
             }}
           >
-            <Paper className="bg-transparent text-white relative top-3.5 -left-1">
-              {/* alternatively, it can be done with bg-black or another color  */}
+            <Paper className="bg-transparent  text-white relative top-3 -left-1">
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
                   id="composition-menu"
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
+                  className="bg-[rgba(0,_0,_0,_0.92)]"
                 >
-                  <MenuItem className="hover:bg-zinc-700 rounded-md">
-                    <Link href="/signup">Sign up</Link>
-                  </MenuItem>
-                  <MenuItem className="hover:bg-zinc-700 rounded-md">
-                    <Link href="/login-page">Login</Link>
-                  </MenuItem>
+                  {menuItems.map((menuItem) => {
+                    return (
+                      <MenuItem className="hover:bg-zinc-700 transition-colors ease-in-out hover:text-blue-400 rounded-md">
+                        <Link href={menuItem.linkHref} className="">
+                          {menuItem.content}
+                        </Link>
+                      </MenuItem>
+                    );
+                  })}
                 </MenuList>
               </ClickAwayListener>
             </Paper>

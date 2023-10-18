@@ -22,6 +22,7 @@ export function LanguageSelect() {
           MenuListProps: {
             sx: {
               width: "65px",
+              backgroundColor: "rgba(0, 0, 0, 0.92)",
             },
           },
         },
@@ -29,7 +30,7 @@ export function LanguageSelect() {
       value={language}
       label="Language"
       onChange={handleLanguageChange}
-      className="text-white relative top-[2px] border-0 ml-4"
+      className="text-white relative top-[2px] border-0 ml-4 "
       variant="standard"
       disableUnderline
     >
