@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <footer className=" text-white font-body px-36 py-12">
+      <footer className=" text-white font-body px-36 py-12 bg-gradient-to-b from-[#0c111c] to-black">
         <div className="flex justify-between w-full">
           <div>
             <ul>

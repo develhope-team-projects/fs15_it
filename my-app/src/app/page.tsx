@@ -32,10 +32,8 @@ export default function Home() {
           />
         </div>
 
-        <Navbar />
-
         {/* TITLES */}
-        <div className="section-homepage w-1/2 mt-5 p-8">
+        <div className="section-homepage w-1/2  p-8">
           <div className="title-homepage">
             <h1 className="text-header">Where music meets collaboration</h1>
             <h2 className="text-sub-header mt-7">Join the revolution</h2>
@@ -44,7 +42,7 @@ export default function Home() {
       </div>
       <HeroMockup />
 
-      <div className="flex background-image ">
+      <div className=" flex flex-col background-image ">
         <div className="background-image absolute w-full  m-0 p-0 -z-10 ">
           <Image
             src="/sfondo-temp-discoverartist.jpg"
@@ -53,29 +51,28 @@ export default function Home() {
             width="1080"
             className="w-full h-full m-0 p-0"
           />
-        </div>
 
-        <Typography className="text-white text-7xl p-20 text-center text-shadow-lg shadow-gray-500">
-          Discover New Artists
-        </Typography>
-      </div>
-      {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
+        </div>
+          <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
+            Discover New Artists
+          </Typography>
+        {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
       unire in un unico div l'img di background e
       le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
       Suggerimento di Vinc: 'Quindi levarlo dal div delle card :-)' */}
-      <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-24">
-        {cardData.map((data, index) => (
-          <CardPlayerHome
-            key={index}
-            content={data.content}
-            cover={data.cover}
-            slider={data.slider}
-          />
-        ))}
+        <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-32">
+          {cardData.map((data, index) => (
+            <CardPlayerHome
+              key={index}
+              content={data.content}
+              cover={data.cover}
+              slider={data.slider}
+            />
+          ))}
+        </div>
       </div>
-      <div className="bg-gradient-to-b from-[#0c111c] to-black">
+      <div className="bg-gradient-to-t from-[#0c111c] to-black">
         <NewsLetterSection />
-        <Footer />
       </div>
     </div>
   );
