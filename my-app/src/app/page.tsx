@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
 import { Typography } from "@mui/material";
 import CardPlayerHome from "./components/cardplayerhome";
@@ -9,7 +8,6 @@ import img2 from "../../public/kendrickllamar.jpg";
 import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "./components/NewsLetterSection";
-import Footer from "./components/Footer";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
@@ -51,11 +49,10 @@ export default function Home() {
             width="1080"
             className="w-full h-full m-0 p-0"
           />
-
         </div>
-          <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
-            Discover New Artists
-          </Typography>
+        <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
+          Discover New Artists
+        </Typography>
         {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
       unire in un unico div l'img di background e
       le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
