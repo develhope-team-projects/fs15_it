@@ -16,7 +16,9 @@ export function Sidebar({
   isSidebarOpen,
   toggleSidebar,
 }: SidebarProps) {
-  // Ricorda che hai commentato navbar in layout
+  //
+  const media = userData.userType === "artist" ? "song" : "beat";
+
   return (
     <>
       <div className="absolute h-screen w-screen text-black">
@@ -97,9 +99,7 @@ export function Sidebar({
                 </g>
               </svg>
             </div>
-            <div className="hidden md:flex ml-2">
-              Saved {userData.userType === "artist" ? "songs" : "beats"}
-            </div>
+            <div className="hidden md:flex ml-2">Saved {media}s</div>
           </Link>
 
           <Link
@@ -118,9 +118,7 @@ export function Sidebar({
                 </g>
               </svg>
             </div>
-            <div className="hidden md:flex ml-2">
-              Upload a {userData.userType === "artist" ? "song" : "beat"}
-            </div>
+            <div className="hidden md:flex ml-2">Upload a {media}</div>
           </Link>
           <Link
             href=""
@@ -147,9 +145,7 @@ export function Sidebar({
                 </g>
               </svg>
             </div>
-            <div className="hidden md:flex ml-2">
-              Manage {userData.userType === "artist" ? "songs" : "beats"}
-            </div>
+            <div className="hidden md:flex ml-2">Manage {media}s</div>
           </Link>
         </div>
         <div className="w-full mt-auto flex justify-end ">
@@ -165,7 +161,6 @@ export function Sidebar({
               <title />
               <path
                 d="M13.13,8.63,32,16V56L13.25,47.87A2,2,0,0,1,12,46V10a2,2,0,0,1,2-2H41a2,2,0,0,1,2,2V46a2,2,0,0,1-2,2H32"
-                // stroke={svgFill}
                 className="transition-colors"
               />
               <line
@@ -173,12 +168,10 @@ export function Sidebar({
                 x2="24.13"
                 y1="35.06"
                 y2="33.5"
-                // stroke={svgFill}
                 className="transition-colors"
               />
               <polyline
                 points="50 32.24 54.24 28 50 23.76"
-                // stroke={svgFill}
                 className="transition-colors"
               />
               <line
@@ -186,7 +179,6 @@ export function Sidebar({
                 x2="43"
                 y1="28"
                 y2="28"
-                // stroke={svgFill}
                 className="transition-colors"
               />
             </svg>
