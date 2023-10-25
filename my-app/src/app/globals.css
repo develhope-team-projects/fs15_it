@@ -30,4 +30,9 @@ body {
   .footer-links {
     @apply hover:text-blue-400;
   }
+
+  .logout-icon-sidebar {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
