@@ -1,5 +1,13 @@
+"use client"
+
 import { Container, Grid } from "@mui/material";
 import CardAnalytics from "../components/CardAnalytics";
+import { Sidebar } from "../components/sidebar/Sidebar";
+import artist from "../../../public/jhene_aiko.jpeg";
+import beatmaker from "../../../public/chad_hugo.webp";
+import { useState } from "react";
+import UseSidebar from "../components/sidebar/UseSidebar";
+
 
 const cardsArray = [
   { title: "Likes", content: 199000, svg: "/likes.svg" },
@@ -8,10 +16,30 @@ const cardsArray = [
   { title: "Year Revenue", content: 700120, svg: "/revenues.svg" },
 ];
 
+const userData1 = {
+  username: "Jhené Aiko",
+  profilePic: artist.src,
+  userType: "artist",
+};
+
+const userData2 = {
+  username: "Chad Hugo",
+  profilePic: beatmaker.src,
+  userType: "beatmaker",
+};
+
 export default function HomepageArtisti() {
+  const {isSidebarOpen, toggleSidebar} = UseSidebar();
+
   return (
-    <div>
-      <div className="flex justify-between">
+    <div >
+      <div className="flex">
+        <Sidebar
+      userData={userData1}
+      isSidebarOpen={isSidebarOpen}
+      toggleSidebar={toggleSidebar}
+    />
+    <div className="flex justify-between">
         <h1>Welcome Username!</h1>
         <div>SoundBridge</div>
       </div>
@@ -29,6 +57,8 @@ export default function HomepageArtisti() {
           ))}
         </Grid>
       </Container>
+    </div>
+
     </div>
   );
 }
