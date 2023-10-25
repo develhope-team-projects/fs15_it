@@ -1,9 +1,9 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
-import Pulsante from "../components/Pulsante";
 import { Typography } from "@mui/material";
 import Link from "next/link";
+import Btn from "../components/Btn";
 
 export default function DesignSystem() {
   return (
@@ -49,7 +49,7 @@ export default function DesignSystem() {
             Buttons
           </h3>
           <Stack spacing={2} direction="row">
-            <Pulsante content={"Prova"} />
+            <Btn content={"Prova"} />
           </Stack>
         </div>
         <div className="border-[0.2px] border-white rounded-lg p-4">

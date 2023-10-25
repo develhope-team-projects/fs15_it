@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import Pulsante from "../Pulsante";
+import Pulsante from "../Btn";
 
 const HeroManage = ({ isBeatMaker = true }) => {
   let iconSize = 40;

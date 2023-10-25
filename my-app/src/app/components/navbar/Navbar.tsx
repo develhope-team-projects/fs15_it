@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Pulsante from "../Pulsante";
+import Btn from "../Btn";
 import { SoundBridgeLogo } from "./SoundBridgeLogo";
 import { LanguageSelect } from "./LanguageSelect";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -39,11 +39,11 @@ export default function Navbar() {
             </Link>
             <div className="hidden sm:block">
               <Link href="/login-page">
-                <Pulsante
+                <Btn
                   content="Log in"
                   color="button-color-base"
                   colorhover="button-hover"
-                ></Pulsante>
+                ></Btn>
               </Link>
             </div>
           </div>

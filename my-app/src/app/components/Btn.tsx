@@ -3,7 +3,7 @@
 
 import Button from "@mui/material/Button";
 
-export default function Pulsante({
+export default function Btn({
   content = "Default",
   color = "",
   colorhover = "",
