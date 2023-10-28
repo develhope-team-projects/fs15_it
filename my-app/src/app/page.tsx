@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./components/navbar/Navbar";
 import HeroMockup from "./components/hero-mockup/HeroMockup";
 import { Typography } from "@mui/material";
@@ -9,6 +8,7 @@ import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "./components/NewsLetterSection";
 import Footer from "./components/Footer";
+import Image from "next/image";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
