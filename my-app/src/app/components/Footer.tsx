@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer className=" text-white font-body px-36 py-12 bg-gradient-to-b from-[#0c111c] to-black">
-        <div className="flex justify-between w-full">
+        <div className="max-md:flex-col max-sm:mb-8 flex justify-between w-full ">
           <div>
             <ul>
               <Link href={"/"} className=" text-xl font-semibold">
@@ -27,7 +27,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className=" text-xl font-semibold mb-4">
                 SoundBridge
               </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className="text-xl mb-4 font-semibold">
                 Support
               </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <ul className="flex flex-col ">
+            <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className=" text-xl mb-4 font-semibold">
                 Social media
               </Link>
