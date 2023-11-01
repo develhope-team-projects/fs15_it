@@ -1,12 +1,13 @@
 "use client";
 
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import CardAnalytics from "../../components/CardAnalytics";
 import { Sidebar } from "../../components/sidebar/Sidebar";
 import artist from "@/../public/jhene_aiko.jpeg";
 import beatmaker from "@/../public/chad_hugo.webp";
 import { useState } from "react";
 import UseSidebar from "@/app/components/sidebar/UseSidebar";
+import Link from "next/link";
 
 const cardsArray = [
   { title: "Likes", content: 199000, svg: "/likes.svg" },
@@ -31,34 +32,43 @@ export default function HomepageArtisti() {
   const { isSidebarOpen, toggleSidebar } = UseSidebar();
 
   return (
-    <div className="bg-[#0c111c]">
-      <div className="flex">
-        <Sidebar
-          userData={userData1}
-          isSidebarOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-        />
-        <div className="bg-[#0c111c]">
-          <div className="flex justify-between">
-            <h1 className="text-white">Welcome Username!</h1>
-            <div className="text-white">SoundBridge</div>
-          </div>
-          <Container>
-            <Grid container spacing={3}>
-              {cardsArray.map((data, index) => (
-                <Grid item xs={6}>
-                  <CardAnalytics
-                    key={index}
-                    title={data.title}
-                    content={data.content}
-                    svg={data.svg}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
+    <>
+    <div className="flex bg-black w-full">
+      <Sidebar
+        userData={userData1}
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+      />
+      <div className="flex flex-col w-[80%]">
+        <div className="w-full flex justify-between ">
+          <div></div>
+          <Link href="/" className="mr-4 flex items-center z-50">
+            <img src="Logo.svg" width={50} height={50} alt=""></img>
+            <Typography className="font-body text-default ml-2 text-white hover:text-blue-400">
+              SoundBridge
+            </Typography>
+          </Link>
         </div>
+        <h1 className=" ml-4 text-sub-header text-white">
+          Welcome {userData1.username}!
+        </h1>
+
+        <Container className="mt-24">
+          <Grid container spacing={10}>
+            {cardsArray.map((data, index) => (
+              <Grid item xl={6}>
+                <CardAnalytics
+                  key={index}
+                  title={data.title}
+                  content={data.content}
+                  svg={data.svg}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </div>
     </div>
+  </>
   );
 }
