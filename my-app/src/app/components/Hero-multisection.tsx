@@ -1,26 +1,5 @@
 "use client";
 
-import * as React from "react";
-import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableRow from "@mui/material/TableRow";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#311cf4",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: "white",
-  fontFamily: "body",
-  fontSize: "30px",
-}));
-
 // Props
 
 interface MyComponentProps {
@@ -38,48 +17,54 @@ interface textProp {
 
 export default function HeroMultisection({ items, texts }: MyComponentProps) {
   return (
-    <div className="bg-[#0c111c]">
-      <Box sx={{ flexGrow: 1 }} className="m-3">
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
-          {items.map((item) => (
-            <Grid item xs={2} sm={4} md={4}>
-              <Item>{item}</Item>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableBody className="bg-[#0c111c]">
-            {texts.map((text) => (
-              <TableRow
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                className="flex justify-around"
+    <div className="hero bg-[#0c111c] flex justify-center">
+      <div className=" flex justify-between p-6 text-white w-3/4 max-lg:w-full max-sm:flex-col">
+        <div className="container1 flex flex-col">
+          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-8 max-lg:text-3xl text-center">
+            {items[0]}
+          </div>
+          <div className="col1">
+            {texts.map((text, index) => (
+              <div
+                className="text flex justify-center gap-4 items-center text-default mb-7"
+                key={index}
               >
-                <TableCell>
-                  <div className=" text-white font-secondary text-default flex justify-center items-center">
-                    {text.col1}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="text-white font-secondary text-default flex justify-center items-center">
-                    {text.col2}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="text-white font-secondary text-default flex gap-3 items-center">
-                    {text.col3}
-                  </div>
-                </TableCell>
-              </TableRow>
+                {text.col1}
+              </div>
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+          </div>
+        </div>
+        <div className="container2 flex flex-col">
+          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center">
+            {items[1]}
+          </div>
+          <div className="col2">
+            {texts.map((text, index) => (
+              <div
+                className="text flex items-center justify-center text-default mb-[63px] mt-[10px]"
+                key={index}
+              >
+                {text.col2}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="container3 flex flex-col">
+          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center">
+            {items[2]}
+          </div>
+          <div className="col3 ">
+            {texts.map((text, index) => (
+              <div
+                className="text flex justify-center gap-4 items-center text-default mb-12 mt-1"
+                key={index}
+              >
+                {text.col3}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -96,24 +81,24 @@ export default function HeroMultisection({ items, texts }: MyComponentProps) {
 
 // const texts = [
 //   {
-//     col1: [<Image src={icon1} alt="" width={40} height={40} />, "Titolo Brano"],
+//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
 //     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={25} height={25} />],
+//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
 //   },
 //   {
-//     col1: [<Image src={icon1} alt="" width={40} height={40} />, "Titolo Brano"],
+//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
 //     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={25} height={25} />],
+//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
 //   },
 //   {
-//     col1: [<Image src={icon1} alt="" width={40} height={40} />, "Titolo Brano"],
+//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
 //     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={25} height={25} />],
+//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
 //   },
 //   {
-//     col1: [<Image src={icon1} alt="" width={40} height={40} />, "Titolo Brano"],
+//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
 //     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={25} height={25} />],
+//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
 //   },
 // ];
 
