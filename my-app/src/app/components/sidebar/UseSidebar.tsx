@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const UseSidebar = () => {
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -8,5 +9,6 @@ const UseSidebar = () => {
   };
   return { isSidebarOpen, toggleSidebar };
 };
+
 
 export default UseSidebar;
