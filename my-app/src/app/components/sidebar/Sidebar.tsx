@@ -38,7 +38,7 @@ export function Sidebar({
       <aside
         className={`${
           isSidebarOpen ? "visible" : "invisible"
-        } relative h-screen min-h-screen pt-4 w-1/3 max-w-sm bg-[#14213D] text-white text-default flex flex-col flex-1 justify-between items-center transition duration-1000`}
+        } relative h-screen min-h-screen pt-4 w-1/2 max-w-sm bg-[#14213D] text-white text-default flex flex-col flex-1 justify-between items-center transition duration-1000`}
       >
         <div
           className="absolute right-0 mr-8 mt-1 hover:text-blue-400 cursor-pointer"
@@ -149,7 +149,7 @@ export function Sidebar({
           </Link>
         </div>
         <div className="w-full mt-auto flex justify-end ">
-          <div className="logout group cursor-pointer">
+          <Link href="/"><div className="logout group cursor-pointer">
             {" "}
             <svg
               className="logout-icon-sidebar w-10 mr-1 mb-1 sm:mr-4 sm:mb-4 fill-none stroke-2 stroke-white group-hover:stroke-blue-400"
@@ -182,7 +182,8 @@ export function Sidebar({
                 className="transition-colors"
               />
             </svg>
-          </div>
+          </div></Link>
+
         </div>
       </aside>
     </>

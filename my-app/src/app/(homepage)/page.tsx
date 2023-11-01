@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import HeroMockup from "./components/hero-mockup/HeroMockup";
+import HeroMockup from "../components/hero-mockup/HeroMockup";
 import { Typography } from "@mui/material";
-import CardPlayerHome from "./components/cardplayerhome";
-import img1 from "../../public/drakedogs.png";
-import img2 from "../../public/kendrickllamar.jpg";
-import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
-import img4 from "../../public/kidcudikidsseeghost.jpg";
-import NewsLetterSection from "./components/NewsLetterSection";
+import CardPlayerHome from "../components/cardplayerhome";
+import img1 from "@/../public/kendrickllamar.jpg";
+import img2 from "@/../public/kendrickllamar.jpg";
+import img3 from "@/../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
+import img4 from "@/../public/kidcudikidsseeghost.jpg";
+import NewsLetterSection from "../components/NewsLetterSection";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
