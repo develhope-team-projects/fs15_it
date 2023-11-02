@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowBack from "@mui/icons-material/ArrowBack";
+import Link from "next/link";
 
 interface MenuProps {
   content: string;
@@ -13,7 +14,7 @@ interface MenuProps {
 
 export default function DenseAppBar({
   content = "Saved Songs",
-  link="#",
+  link = "#",
 }: MenuProps) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -32,11 +33,15 @@ export default function DenseAppBar({
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <Link href="/">
+              <MenuIcon />
+            </Link>
           </IconButton>
           <h2 className="font-body text-2xl font-semibold">{content}</h2>
           <IconButton edge="end" color="inherit" sx={{ marginLeft: 2 }}>
-            <ArrowBack />
+            <Link href={link}>
+              <ArrowBack />
+            </Link>
           </IconButton>
         </Toolbar>
       </AppBar>
