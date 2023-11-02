@@ -10,12 +10,23 @@ import img3 from "../../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "../../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "./components/NewsLetterSection";
 import Footer from "./components/Footer";
+import CardGenre from "./components/navbar/cardgenre";
+import { HamburgerMenu } from "./components/navbar/HamburgerMenu";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
   { content: "Kendrick-ABC", cover: img2.src, slider: 12 },
   { content: "Metro-ABC", cover: img3.src, slider: 36 },
   { content: "Kid Cudi-ABC", cover: img4.src, slider: "full" },
+];
+
+const CardGenres = [
+  { content: "Pop", color: "bg-green-500" },
+  { content: "Rock", color: "bg-red-500" },
+  { content: "Rap", color: "bg-yellow-500" },
+  { content: "Country", color: "bg-purple-500" },
+  { content: "Indie", color: "bg-violet-500" },
+  { content: "Lo-fi", color: "bg-gray-500" },
 ];
 
 export default function Home() {
@@ -51,15 +62,10 @@ export default function Home() {
             width="1080"
             className="w-full h-full m-0 p-0"
           />
-
         </div>
-          <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
-            Discover New Artists
-          </Typography>
-        {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
-      unire in un unico div l'img di background e
-      le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
-      Suggerimento di Vinc: 'Quindi levarlo dal div delle card :-)' */}
+        <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
+          Discover New Artists
+        </Typography>
         <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-32">
           {cardData.map((data, index) => (
             <CardPlayerHome
@@ -73,6 +79,21 @@ export default function Home() {
       </div>
       <div className="bg-gradient-to-t from-[#0c111c] to-black">
         <NewsLetterSection />
+        <div className="bg-gradient-to-b from-blue-950 items-center align-middle justify-center text-center pb-24 ">
+          <Typography className="text-white text-5xl p-12 text-shadow-lg shadow-gray-500 mr-14">
+            Favorite Genres
+          </Typography>
+
+          <div className="grid grid-cols-3  gap-44 p-24  max-w-screen-2xl mx-auto h-[700px]  justify-center items-center ">
+            {CardGenres.map((data, index) => (
+              <CardGenre
+                key={index}
+                content={data.content}
+                color={data.color}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
