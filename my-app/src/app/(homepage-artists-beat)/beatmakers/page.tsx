@@ -33,43 +33,48 @@ export default function HomepageArtisti() {
 
   return (
     <>
-    <div className="flex bg-black w-full">
-      <Sidebar
-        userData={userData2}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        links={['/beatmakers/favorite-genres', '/beatmakers/saved-songs', '/beatmakers/upload-songs', '/beatmakers/manage-songs']}
-      />
-      <div className="flex flex-col w-[80%]">
-        <div className="w-full flex justify-between ">
-          <div></div>
-          <Link href="/" className="mr-4 flex items-center z-50">
-            <img src="Logo.svg" width={50} height={50} alt=""></img>
-            <Typography className="font-body text-default ml-2 text-white hover:text-blue-400">
-              SoundBridge
-            </Typography>
-          </Link>
-        </div>
-        <h1 className=" ml-4 text-sub-header text-white">
-          Welcome {userData2.username}!
-        </h1>
+      <div className="flex bg-black w-full">
+        <Sidebar
+          userData={userData2}
+          isSidebarOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+          links={[
+            "/beatmakers/favorite-genres",
+            "/beatmakers/saved-beats",
+            "/beatmakers/upload-beats",
+            "/beatmakers/manage-songs",
+          ]}
+        />
+        <div className="flex flex-col w-[80%]">
+          <div className="w-full flex justify-between ">
+            <div></div>
+            <Link href="/" className="mr-4 flex items-center z-50">
+              <img src="Logo.svg" width={50} height={50} alt=""></img>
+              <Typography className="font-body text-default ml-2 text-white hover:text-blue-400">
+                SoundBridge
+              </Typography>
+            </Link>
+          </div>
+          <h1 className=" ml-4 text-sub-header text-white">
+            Welcome {userData2.username}!
+          </h1>
 
-        <Container className="mt-24">
-          <Grid container spacing={10}>
-            {cardsArray.map((data, index) => (
-              <Grid item xl={6}>
-                <CardAnalytics
-                  key={index}
-                  title={data.title}
-                  content={data.content}
-                  svg={data.svg}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+          <Container className="mt-24">
+            <Grid container spacing={10}>
+              {cardsArray.map((data, index) => (
+                <Grid item xl={6}>
+                  <CardAnalytics
+                    key={index}
+                    title={data.title}
+                    content={data.content}
+                    svg={data.svg}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 }
