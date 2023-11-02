@@ -3,11 +3,11 @@ import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { Typography } from "@mui/material";
 import Link from "next/link";
-import Btn from "../components/Btn";
+import Btn from "../../components/Btn";
 
 export default function DesignSystem() {
   return (
-    <div className="bg-[#0D111D] text-white font-body h-screen text-default">
+    <div className="bg-[#0D111D] text-white font-body  text-default">
       <div className="navbar relative flex items-center p-3 justify-between">
         <div className="navbar-background absolute bg-black opacity-20 h-full w-full p-0 m-0 "></div>
         <div className="flex items-center ml-8">

@@ -27,7 +27,7 @@ export default function Home() {
             alt=""
             height="5865"
             width="3915"
-            className="w-full h-full m-0 p-0"
+            className="w-full h-full m-0 p-0 object-cover"
           />
         </div>
 
@@ -41,8 +41,8 @@ export default function Home() {
       </div>
       <HeroMockup />
 
-      <div className=" flex flex-col background-image ">
-        <div className="background-image absolute w-full  m-0 p-0 -z-10 ">
+      <div className=" flex flex-col background-image min-h-[270px] max-sm:hidden">
+        <div className="background-image absolute w-full  m-0 p-0 -z-10  ">
           <Image
             src="/sfondo-temp-discoverartist.jpg"
             alt=""
@@ -51,14 +51,14 @@ export default function Home() {
             className="w-full h-full m-0 p-0"
           />
         </div>
-        <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500">
+        <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500 max-sm:p-6 max-sm:text-4xl">
           Discover New Artists
         </Typography>
         {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
       unire in un unico div l'img di background e
       le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
       Suggerimento di Vinc: 'Quindi levarlo dal div delle card :-)' */}
-        <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-32">
+        <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-32 max-sm:flex-col max-sm:hidden">
           {cardData.map((data, index) => (
             <CardPlayerHome
               key={index}

@@ -3,30 +3,32 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <footer className=" text-white font-body px-36 py-12 bg-gradient-to-b from-[#0c111c] to-black">
+      <footer className=" text-white font-body px-36 py-12 bg-gradient-to-b from-[#0c111c] to-black max-sm:text-center">
         <div className="max-md:flex-col max-sm:mb-8 flex justify-between w-full ">
           <div>
             <ul>
-              <Link href={"/"} className=" text-xl font-semibold">
+              <Link href={"/"} className=" text-xl font-semibold ">
                 Links
               </Link>
-              <Image
-                src="/googleplay.png"
-                alt=""
-                className="mb-4 mt-10 cursor-pointer"
-                width="200"
-                height="25"
-              />
-              <Image
-                src="/appstore (1).png"
-                alt=""
-                className="cursor-pointer"
-                width="200"
-                height="25"
-              />
+              <div className="">
+                <Image
+                  src="/googleplay.png"
+                  alt=""
+                  className="mb-4 mt-10 cursor-pointer"
+                  width="200"
+                  height="25"
+                />
+                <Image
+                  src="/appstore (1).png"
+                  alt=""
+                  className="mb-4 mt-10 cursor-pointer"
+                  width="200"
+                  height="25"
+                />
+              </div>
             </ul>
           </div>
-          <div>
+          <div className="max-sm:hidden">
             <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className=" text-xl font-semibold mb-4">
                 SoundBridge
@@ -45,7 +47,7 @@ export default function Footer() {
               </Link>
             </ul>
           </div>
-          <div>
+          <div className="max-sm:hidden">
             <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className="text-xl mb-4 font-semibold">
                 Support
@@ -53,10 +55,10 @@ export default function Footer() {
               <Link href={"/"} className="footer-links mb-2">
                 Pricing
               </Link>
-              <Link href={"/"} className="footer-links mb-2">
+              <Link href={"/"} className="footer-links mb-2 max-sm:hidden">
                 Help Desk
               </Link>
-              <Link href={"/"} className="footer-links mb-2">
+              <Link href={"/"} className="footer-links mb-2 max-sm:hidden">
                 Cookies preferencies
               </Link>
               <Link href={"/"} className="footer-links mb-2">

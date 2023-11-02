@@ -11,8 +11,8 @@ interface menuElement {
 }
 
 const hamburgerMenuElements: menuElement[] = [
-  { content: "Sign Up", linkHref: "/signup" },
-  { content: "Login", linkHref: "/login-page" },
+  { content: "Sign Up", linkHref: "/artists" },
+  { content: "Login", linkHref: "/beatmakers" },
 ];
 
 export default function Navbar() {
@@ -32,13 +32,13 @@ export default function Navbar() {
         <div className="flex mr-1 sm:mr-4 items-center">
           <div className="flex mr-2">
             <Link
-              href="/signup"
+              href="/artists"
               className="mx-6 items-center z-50 hidden sm:flex text-white hover:text-blue-400 transition-colors ease-in-out"
             >
               Sign Up
             </Link>
             <div className="hidden sm:block">
-              <Link href="/login-page">
+              <Link href="/beatmakers">
                 <Btn
                   content="Log in"
                   color="button-color-base"
