@@ -19,7 +19,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
     console.log("Song edited");
   };
   return (
-    <div className="bg-black flex flex-col gap-y-8 py-10 ">
+    <div className="bg-black flex flex-col gap-y-8 py-28 ">
       <div className="grid grid-cols-3 text-white">
         <div className="place-self-center">
           <Image

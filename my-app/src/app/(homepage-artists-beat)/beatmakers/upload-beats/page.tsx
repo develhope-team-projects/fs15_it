@@ -34,7 +34,7 @@ const texts = [
 export default function UploadBeats() {
   return (
     <>
-      <DenseAppBar content="Upload Beats" link="/artists" />
+      <DenseAppBar content="Upload Beats" link="/beatmakers" />
       <HeroMultisection items={items} texts={texts} />
     </>
   );

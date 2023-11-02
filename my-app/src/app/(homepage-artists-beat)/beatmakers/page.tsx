@@ -42,7 +42,7 @@ export default function HomepageArtisti() {
             "/beatmakers/favorite-genres",
             "/beatmakers/saved-beats",
             "/beatmakers/upload-beats",
-            "/beatmakers/manage-songs",
+            "/beatmakers/manage-beats",
           ]}
         />
         <div className="flex flex-col w-[80%]">

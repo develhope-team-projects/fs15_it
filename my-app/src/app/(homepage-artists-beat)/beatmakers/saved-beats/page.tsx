@@ -34,7 +34,7 @@ const texts = [
 export default function SavedBeats() {
   return (
     <>
-      <DenseAppBar content="Saved Beats" link="/artists" />
+      <DenseAppBar content="Saved Beats" link="/beatmakers" />
       <HeroMultisection items={items} texts={texts} />
     </>
   );
