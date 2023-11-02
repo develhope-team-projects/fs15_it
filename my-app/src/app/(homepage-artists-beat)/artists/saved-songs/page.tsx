@@ -1,8 +1,8 @@
 import Image from "next/image";
 // import icon1 from "../../public/user-icon.png";
 // import icon2 from "../../../../../public/assets/img/";
-import icon1 from "../../../../../public/assets/img/hero-manage/gears.svg";
-import icon2 from "../../../../../public/assets/img/hero-manage/gears.svg";
+import icon1 from "../../../../../public/user-icon.png";
+import icon2 from "../../../../../public/bx-download.svg";
 import HeroMultisection from "@/app/components/heroMultisection";
 import DenseAppBar from "@/app/components/navbar-multisection/NavbarMulti";
 
