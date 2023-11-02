@@ -15,7 +15,7 @@ export default function FavoriteGenres() {
       <div className="bg-gradient-to-b from-black to-[#0c111c]">
         <DenseAppBar content="Favorite Genres" link="/artists" />
 
-        <div className="grid grid-cols-3  gap-44 p-24  max-w-screen-2xl mx-auto h-[700px]  justify-center items-center ">
+        <div className="grid max-md:grid-cols-2 grid-cols-3  gap-2 max-sm:p-16 sm:p-32 max-w-screen-2xl mx-auto h-[700px]  justify-center items-center ">
           {CardGenres.map((data, index) => (
             <CardGenre key={index} content={data.content} color={data.color} />
           ))}
