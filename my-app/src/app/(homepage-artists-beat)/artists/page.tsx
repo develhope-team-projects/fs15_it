@@ -38,6 +38,7 @@ export default function HomepageArtisti() {
         userData={userData1}
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
+        links={['/artists/favorite-genres', '/artists/saved-songs', '/artists/upload-songs', '/artists/manage-songs']}
       />
       <div className="flex flex-col w-[80%]">
         <div className="w-full flex justify-between ">

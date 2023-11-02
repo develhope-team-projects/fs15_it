@@ -4,17 +4,21 @@ import { MouseEventHandler } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSelect } from "../navbar/LanguageSelect";
+import { IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
 
 interface SidebarProps {
   userData: { username: string; profilePic: string; userType: string };
   isSidebarOpen: boolean;
   toggleSidebar: MouseEventHandler<HTMLDivElement>;
+  links: string[];
 }
 
 export function Sidebar({
   userData,
   isSidebarOpen,
-  toggleSidebar,
+  toggleSidebar, links
 }: SidebarProps) {
   //
   const media = userData.userType === "artist" ? "song" : "beat";
@@ -24,17 +28,22 @@ export function Sidebar({
       <div className="absolute h-screen w-screen text-black">
         {!isSidebarOpen && (
           <>
-            <p
+            {/* <p
               onClick={toggleSidebar}
-              className="absolute bg-transparent text-black hover:text-blue-400 z-10 cursor-pointer "
+              className="absolute bg-transparent text-white hover:text-blue-400 z-10 cursor-pointer "
             >
               Sidebar
-            </p>
+            </p> */}
+            <div className="ml-2 mt-1" onClick={toggleSidebar}><IconButton >
+              <MenuIcon  sx={{fill: "white"}} />
+            </IconButton></div>
+
             <div className="absolute bg-black opacity-20 h-full w-full transition"></div>
           </>
         )}
       </div>
       <div>
+
         <aside
           className={`${
             isSidebarOpen ? "visible" : "invisible"
@@ -46,7 +55,7 @@ export function Sidebar({
           >
             X
           </div>
-          <div className="hidden lg:flex w-full ml-0 mb-4 md:mb-0 md:ml-12 ">
+          <div className="hidden lg:flex w-full ml-0 mb-4 md:mb-0  ">
             <LanguageSelect />
             {/* hidden when screen is smaller  */}
           </div>
@@ -73,7 +82,7 @@ export function Sidebar({
           </div>
           <div className="flex-grow flex flex-col items-start gap-[13%] justify-center">
             <Link
-              href=""
+              href={links[0]}
               className="hover:text-blue-400 fill-white hover:fill-blue-400 flex items-center"
             >
               <div>
@@ -84,7 +93,7 @@ export function Sidebar({
               <div className="hidden md:flex ml-2">Favorite genres</div>
             </Link>
             <Link
-              href=""
+              href={links[1]}
               className="hover:text-blue-400 fill-white hover:fill-blue-400 flex items-center"
             >
               <div>
@@ -103,7 +112,7 @@ export function Sidebar({
             </Link>
 
             <Link
-              href=""
+              href={links[2]}
               className="hover:text-blue-400 fill-white hover:fill-blue-400 flex items-center"
             >
               <div>
@@ -121,7 +130,7 @@ export function Sidebar({
               <div className="hidden md:flex ml-2">Upload a {media}</div>
             </Link>
             <Link
-              href=""
+              href={links[3]}
               className="hover:text-blue-400 fill-white hover:fill-blue-400 flex items-center"
             >
               <div>
