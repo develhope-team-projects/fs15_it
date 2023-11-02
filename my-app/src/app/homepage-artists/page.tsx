@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Container, Grid, Typography } from "@mui/material";
@@ -72,3 +73,4 @@ export default function HomepageArtisti() {
     </>
   );
 }
+

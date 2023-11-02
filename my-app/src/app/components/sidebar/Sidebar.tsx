@@ -21,6 +21,7 @@ export function Sidebar({
 
   return (
     <>
+
       <div className="absolute h-screen w-screen text-black">
         {!isSidebarOpen && (
           <>
@@ -34,11 +35,10 @@ export function Sidebar({
           </>
         )}
       </div>
-
-      <aside
+      <div><aside
         className={`${
           isSidebarOpen ? "visible" : "invisible"
-        } relative h-screen min-h-screen pt-4 w-1/3 max-w-sm bg-[#14213D] text-white text-default flex flex-col flex-1 justify-between items-center transition duration-1000`}
+        } relative h-screen min-w-fit min-h-screen pt-4 px-12 w-1/2 max-w-sm bg-[#14213D] text-white text-default flex flex-col flex-1 justify-between items-center transition duration-1000`}
       >
         <div
           className="absolute right-0 mr-8 mt-1 hover:text-blue-400 cursor-pointer"
@@ -149,7 +149,7 @@ export function Sidebar({
           </Link>
         </div>
         <div className="w-full mt-auto flex justify-end ">
-          <div className="logout group cursor-pointer">
+          <Link href="/"><div className="logout group cursor-pointer max-md:hidden ">
             {" "}
             <svg
               className="logout-icon-sidebar w-10 mr-1 mb-1 sm:mr-4 sm:mb-4 fill-none stroke-2 stroke-white group-hover:stroke-blue-400"
@@ -182,9 +182,48 @@ export function Sidebar({
                 className="transition-colors"
               />
             </svg>
-          </div>
+          </div></Link>
+
         </div>
       </aside>
+      <div className="bg-[#14213D] h-screen w-full md:hidden flex flex-col justify-between items-center">
+        <div ></div>
+      <Link href="/"><div className="logout group cursor-pointer md:hidden flex mb-4">
+            {" "}
+            <svg
+              className="logout-icon-sidebar w-10 mr-1 mb-1 sm:mr-4 sm:mb-4 fill-none stroke-2 stroke-white group-hover:stroke-blue-400"
+              data-name="Layer 1"
+              viewBox="0 0 64 64"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs></defs>
+              <title />
+              <path
+                d="M13.13,8.63,32,16V56L13.25,47.87A2,2,0,0,1,12,46V10a2,2,0,0,1,2-2H41a2,2,0,0,1,2,2V46a2,2,0,0,1-2,2H32"
+                className="transition-colors"
+              />
+              <line
+                x1="27.91"
+                x2="24.13"
+                y1="35.06"
+                y2="33.5"
+                className="transition-colors"
+              />
+              <polyline
+                points="50 32.24 54.24 28 50 23.76"
+                className="transition-colors"
+              />
+              <line
+                x1="54"
+                x2="43"
+                y1="28"
+                y2="28"
+                className="transition-colors"
+              />
+            </svg>
+          </div></Link>
+      </div></div>
+
     </>
   );
 }
