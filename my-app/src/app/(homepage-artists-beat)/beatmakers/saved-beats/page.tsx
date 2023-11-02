@@ -31,10 +31,10 @@ const texts = [
   },
 ];
 
-export default function SavedSongs() {
+export default function SavedBeats() {
   return (
     <>
-      <DenseAppBar content="Saved Songs" link="/artists" />
+      <DenseAppBar content="Saved Beats" link="/artists" />
       <HeroMultisection items={items} texts={texts} />
     </>
   );
