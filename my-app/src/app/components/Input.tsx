@@ -44,15 +44,15 @@ export default function InputField() {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "40ch" },
+          "& > :not(style)": { m: 1, width: "35ch" },
         }}
         noValidate
         autoComplete="off"
       >
         <TextField
           id="outlined-basic"
-          label="Outlined"
-          placeholder='placeholder'
+          label="Mail"
+          placeholder='Insert your email'
           size="small"
           InputProps={{
             startAdornment: (

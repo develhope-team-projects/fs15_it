@@ -6,7 +6,7 @@ export default function NewsLetterSection() {
       <h3 className="font-body text-white">
         Yes! Send me personalized tips for selling and shopping on SoundBridge
       </h3>
-      <div className="flex gap-2 justify-center items-center">
+      <div className="flex gap-2 justify-center items-center max-sm:flex-col ">
         <InputField />
         <Btn content="Done" />
       </div>
