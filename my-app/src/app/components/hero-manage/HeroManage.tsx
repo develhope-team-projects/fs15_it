@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Pulsante from "../Btn";
 
 const HeroManage = ({ isBeatMaker = true }) => {
+  const [isPrivate, setIsPrivate] = useState(true);
   let iconSize = 40;
   let buttonWidth = 100;
 
@@ -13,6 +14,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
     console.log("Song removed");
   };
   const ModifySongVisibility = () => {
+    setIsPrivate((p) => !p);
     console.log("Visibility modified");
   };
   const EditSong = () => {
@@ -47,7 +49,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
       <div className="grid grid-cols-3 text-white">
         <div className="place-self-center">
           <Image
-            src="/assets/img/hero-manage/lock2.svg"
+            src={`/assets/img/hero-manage/${isPrivate ? "lock" : "lock2"}.svg`}
             alt="Mockup picture of a macbook"
             width={iconSize}
             height={iconSize}
@@ -64,7 +66,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
               ModifySongVisibility();
             }}
           >
-            Visibility
+            {isPrivate ? "Private" : "Public"}
           </button>
         </div>
       </div>
