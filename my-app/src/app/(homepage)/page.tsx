@@ -9,6 +9,7 @@ import img2 from "@/../public/kendrickllamar.jpg";
 import img3 from "@/../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "@/../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "../components/NewsLetterSection";
+import { Form } from "../components/Form";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
@@ -31,7 +32,6 @@ export default function Home() {
           />
         </div>
 
-        {/* TITLES */}
         <div className="section-homepage w-1/2  p-8">
           <div className="title-homepage">
             <h1 className="text-header">Where music meets collaboration</h1>
@@ -54,10 +54,6 @@ export default function Home() {
         <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500 max-sm:p-6 max-sm:text-4xl">
           Discover New Artists
         </Typography>
-        {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
-      unire in un unico div l'img di background e
-      le card. Mettere poi il margin bottom per spaziare nel div che creerai per unire card e bg-image.
-      Suggerimento di Vinc: 'Quindi levarlo dal div delle card :-)' */}
         <div className="flex flex-wrap flex-row gap-28 p-12 ml-10 w-[700px] h-[700px] relative mb-32 max-sm:flex-col max-sm:hidden">
           {cardData.map((data, index) => (
             <CardPlayerHome
@@ -71,6 +67,9 @@ export default function Home() {
       </div>
       <div className="bg-gradient-to-t from-[#0c111c] to-black">
         <NewsLetterSection />
+      </div>
+      <div>
+        <Form />
       </div>
     </div>
   );
