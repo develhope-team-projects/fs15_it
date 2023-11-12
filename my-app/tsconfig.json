@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/components/CardAnalytics.jsx"
+    "src/app/components/CardAnalytics.jsx",
+    "src/app/db/server.mjs"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,12 +1,13 @@
+function handleSubmit(event: any) {
+  event.preventDefault();
+  const username = event.target.elements.name.value;
+  const password = event.target.elements.password.value;
+  const singer = event.target.elements.singer.checked;
+  const beatmaker = event.target.elements.beatmaker.checked;
+  console.log(username, password, singer, beatmaker);
+}
+
 export function Form() {
-  function handleSubmit(event: any) {
-    event.preventDefault();
-    const username = event.target.elements.name.value;
-    const password = event.target.elements.password.value;
-    const singer = event.target.elements.singer.checked;
-    const beatmaker = event.target.elements.beatmaker.checked;
-    console.log(username, password, singer, beatmaker);
-  }
   return (
     <>
       <form
@@ -30,9 +31,9 @@ export function Form() {
         </div>
         <div>
           <label htmlFor="singer">Singer</label>
-          <input type="checkbox" id="singer" />
+          <input type="radio" id="singer" name="check" />
           <label htmlFor="beatmaker">Beatmaker</label>
-          <input type="checkbox" id="beatmaker" />
+          <input type="radio" id="beatmaker" name="check" />
         </div>
         <button
           type="submit"
