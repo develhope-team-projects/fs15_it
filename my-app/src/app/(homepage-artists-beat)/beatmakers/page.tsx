@@ -8,13 +8,15 @@ import beatmaker from "@/../public/chad_hugo.webp";
 import { useState } from "react";
 import UseSidebar from "@/app/components/sidebar/UseSidebar";
 import Link from "next/link";
+import { useLanguage } from "@/app/components/LanguageContext";
+import translations from "@/app/translations";
 
-const cardsArray = [
-  { title: "Likes", content: 199000, svg: "/likes.svg" },
-  { title: "Playbacks", content: 200300, svg: "/play.svg" },
-  { title: "Monthly Revenue", content: 54000, svg: "/revenues.svg" },
-  { title: "Year Revenue", content: 700120, svg: "/revenues.svg" },
-];
+// const cardsArray = [
+//   { title: "Likes", content: 199000, svg: "/likes.svg" },
+//   { title: "Playbacks", content: 200300, svg: "/play.svg" },
+//   { title: "Monthly Revenue", content: 54000, svg: "/revenues.svg" },
+//   { title: "Yearly Revenue", content: 700120, svg: "/revenues.svg" },
+// ];
 
 const userData1 = {
   username: "Jhené Aiko",
@@ -30,7 +32,30 @@ const userData2 = {
 
 export default function HomepageArtisti() {
   const { isSidebarOpen, toggleSidebar } = UseSidebar();
-
+  const { language } = useLanguage();
+  const t: any = translations;
+  const cardsArray = [
+    {
+      title: t[language].homepageBeatmakers.likes,
+      content: 199000,
+      svg: "/likes.svg",
+    },
+    {
+      title: t[language].homepageBeatmakers.playbacks,
+      content: 200300,
+      svg: "/play.svg",
+    },
+    {
+      title: t[language].homepageBeatmakers.monthlyRevenue,
+      content: 54000,
+      svg: "/revenues.svg",
+    },
+    {
+      title: t[language].homepageBeatmakers.yearlyRevenue,
+      content: 700120,
+      svg: "/revenues.svg",
+    },
+  ];
   return (
     <>
       <div className="flex bg-black w-full">
@@ -44,6 +69,7 @@ export default function HomepageArtisti() {
             "/beatmakers/upload-beats",
             "/beatmakers/manage-beats",
           ]}
+          language={language}
         />
         <div className="flex flex-col w-[80%]">
           <div className="w-full flex justify-between ">

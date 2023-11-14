@@ -1,49 +1,42 @@
-"use client";
-
 import { MouseEventHandler } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSelect } from "../navbar/LanguageSelect";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import translations from "@/app/translations";
 
 interface SidebarProps {
   userData: { username: string; profilePic: string; userType: string };
   isSidebarOpen: boolean;
   toggleSidebar: MouseEventHandler<HTMLDivElement>;
   links: string[];
+  language: string;
 }
 
 export function Sidebar({
   userData,
   isSidebarOpen,
-  toggleSidebar, links
+  toggleSidebar,
+  links,
+  language,
 }: SidebarProps) {
-  //
-  const media = userData.userType === "artist" ? "song" : "beat";
+  const t: any = translations;
 
   return (
     <>
       <div className="absolute h-screen w-screen text-black">
         {!isSidebarOpen && (
           <>
-            {/* <p
-              onClick={toggleSidebar}
-              className="absolute bg-transparent text-white hover:text-blue-400 z-10 cursor-pointer "
-            >
-              Sidebar
-            </p> */}
-            <div className="ml-2 mt-1" onClick={toggleSidebar}><IconButton >
-              <MenuIcon  sx={{fill: "white"}} />
-            </IconButton></div>
-
-            <div className="absolute bg-black opacity-20 h-full w-full transition"></div>
+            <div className="ml-2 mt-1" onClick={toggleSidebar}>
+              <IconButton>
+                <MenuIcon sx={{ fill: "white" }} />
+              </IconButton>
+            </div>
           </>
         )}
       </div>
       <div>
-
         <aside
           className={`${
             isSidebarOpen ? "visible" : "invisible"
@@ -55,14 +48,18 @@ export function Sidebar({
           >
             X
           </div>
-          <div className="hidden lg:flex w-full ml-0 mb-4 md:mb-0  ">
+          {/* <div className="hidden lg:flex w-full ml-0 mb-4 md:mb-0  ">
             <LanguageSelect />
-            {/* hidden when screen is smaller  */}
-          </div>
+            hidden when screen is smaller
+          </div> */}
           <div className="w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col-reverse lg:flex-col items-center">
-              <div className="flex lg:hidden w-full mt-3 mb-14 sm:mb-0 ml-3 justify-center">
-                <LanguageSelect />
+            <div className="flex flex-col-reverse  items-center">
+              <div className="hidden md:flex w-full mt-3  mb-14 sm:mb-0 mx-0 justify-center">
+                <LanguageSelect isFlexCol={false} />
+                {/* hidden when screen is smaller  */}
+              </div>
+              <div className="flex md:hidden w-full mt-3  mb-14 sm:mb-0 mx-0 justify-center">
+                <LanguageSelect isFlexCol />
                 {/* hidden when screen is bigger  */}
               </div>
               <div className="flex flex-col items-center">
@@ -80,7 +77,7 @@ export function Sidebar({
               </div>
             </div>
           </div>
-          <div className="flex-grow flex flex-col items-start gap-[13%] justify-center">
+          <div className="flex-grow md:w-48 flex flex-col items-start gap-[13%] justify-center">
             <Link
               href={links[0]}
               className="hover:text-blue-400 fill-white hover:fill-blue-400 flex items-center"
@@ -90,7 +87,9 @@ export function Sidebar({
                   <path d="M8.612,2.347L8,2.997l-0.612-0.65c-1.69-1.795-4.43-1.795-6.12,0c-1.69,1.795-1.69,4.706,0,6.502l0.612,0.65L8,16  l6.12-6.502l0.612-0.65c1.69-1.795,1.69-4.706,0-6.502C13.042,0.551,10.302,0.551,8.612,2.347z" />
                 </svg>
               </div>
-              <div className="hidden md:flex ml-2">Favorite genres</div>
+              <div className="hidden md:flex ml-2">
+                {t[language].sidebar.favoriteGenres}
+              </div>
             </Link>
             <Link
               href={links[1]}
@@ -108,7 +107,11 @@ export function Sidebar({
                   </g>
                 </svg>
               </div>
-              <div className="hidden md:flex ml-2">Saved {media}s</div>
+              <div className="hidden md:flex ml-2">
+                {userData.userType === "artist"
+                  ? t[language].sidebar.savedSongs
+                  : t[language].sidebar.savedBeats}
+              </div>
             </Link>
 
             <Link
@@ -127,7 +130,11 @@ export function Sidebar({
                   </g>
                 </svg>
               </div>
-              <div className="hidden md:flex ml-2">Upload a {media}</div>
+              <div className="hidden md:flex ml-2">
+                {userData.userType === "artist"
+                  ? t[language].sidebar.uploadSongs
+                  : t[language].sidebar.uploadBeats}
+              </div>
             </Link>
             <Link
               href={links[3]}
@@ -154,7 +161,11 @@ export function Sidebar({
                   </g>
                 </svg>
               </div>
-              <div className="hidden md:flex ml-2">Manage {media}s</div>
+              <div className="hidden md:flex ml-2">
+                {userData.userType === "artist"
+                  ? t[language].sidebar.manageSongs
+                  : t[language].sidebar.manageBeats}
+              </div>
             </Link>
           </div>
           <div className="w-full mt-auto flex justify-end ">
