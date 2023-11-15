@@ -19,14 +19,14 @@ export default function HeroMultisection({ items, texts }: MyComponentProps) {
   return (
     <div className="hero bg-[#0c111c] flex justify-center">
       <div className=" flex justify-between p-6 text-white w-3/4 max-lg:w-full max-sm:flex-col">
-        <div className="container1 flex flex-col">
+        <div className="container1 flex flex-col ">
           <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-8 max-lg:text-3xl text-center">
             {items[0]}
           </div>
-          <div className="col1">
+          <div className="col1  flex flex-col items-start">
             {texts.map((text, index) => (
               <div
-                className="text flex justify-center gap-4 items-center text-default mb-7"
+                className="text flex justify-center  gap-4 items-center text-default mb-7"
                 key={index}
               >
                 {text.col1}

@@ -43,13 +43,13 @@ export default function Navbar() {
         <div className="flex mr-1 sm:mr-4 items-center">
           <div className="flex mr-2">
             <Link
-              href="/artists"
+              href="/sign-in"
               className="mx-6 items-center z-50 hidden sm:flex text-white hover:text-blue-400 transition-colors ease-in-out"
             >
               {t[language].navbar.signUp}
             </Link>
             <div className="hidden sm:block">
-              <Link href="/beatmakers">
+              <Link href="/log-in">
                 <Btn
                   content={t[language].navbar.login}
                   color="button-color-base"

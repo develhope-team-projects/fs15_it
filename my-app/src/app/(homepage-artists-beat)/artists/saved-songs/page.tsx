@@ -49,34 +49,34 @@ export default function SavedSongs() {
     {
       col1: [
         <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].savedSongsPage.title,
+        "Congratulations",
       ],
-      col2: t[language].savedSongsPage.artistName,
-      col3: ["2:38", <Image src={icon2} alt="" width={40} height={40} />],
+      col2: "Post Malone",
+      col3: ["2:56", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
       col1: [
         <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].savedSongsPage.title,
+        "Sere Nere",
       ],
-      col2: t[language].savedSongsPage.artistName,
-      col3: ["2:38", <Image src={icon2} alt="" width={40} height={40} />],
+      col2: "Tiziano Ferro",
+      col3: ["3:45", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
       col1: [
         <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].savedSongsPage.title,
+        "Mask Off",
       ],
-      col2: t[language].savedSongsPage.artistName,
-      col3: ["2:38", <Image src={icon2} alt="" width={40} height={40} />],
+      col2: "Future",
+      col3: ["4:35", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
       col1: [
         <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].savedSongsPage.title,
+        "A Lot",
       ],
-      col2: t[language].savedSongsPage.artistName,
-      col3: ["2:38", <Image src={icon2} alt="" width={40} height={40} />],
+      col2: "21 Savage",
+      col3: ["3:35", <Image src={icon2} alt="" width={40} height={40} />],
     },
   ];
 
