@@ -1,11 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import MockupTitle from "../MockupTitle";
+import translations from "@/app/translations";
 
-const HeroMockup = () => {
+interface HeroMockupProps {
+  language: string;
+}
+const HeroMockup = ({ language }: HeroMockupProps) => {
+  const t: any = translations;
+
   return (
     <div className="bg-[#0d111d]">
-      <MockupTitle />
+      <MockupTitle customText={t[language].mockups.title} />
       <div className="flex justify-evenly items-center  h-screen text-stone-50 flex-wrap">
         <div className="min-w-fit">
           <Image

@@ -3,8 +3,15 @@
 import Image from "next/image";
 import React from "react";
 import Pulsante from "../Btn";
+import translations from "@/app/translations";
 
-const HeroManage = ({ isBeatMaker = true }) => {
+interface HeroManageProps {
+  isBeatMaker: boolean;
+  language: string;
+}
+
+const HeroManage = ({ isBeatMaker = true, language }: HeroManageProps) => {
+  const t: any = translations;
   let iconSize = 40;
   let buttonWidth = 100;
 
@@ -30,7 +37,9 @@ const HeroManage = ({ isBeatMaker = true }) => {
           />
         </div>
         <div className="flex justify-end items-center">
-          Remove a {mediaType} from your projects
+          {isBeatMaker
+            ? t[language].heroManage.removeBeat
+            : t[language].heroManage.removeSong}
         </div>
         <div className="place-self-center">
           {/* <Pulsante content="Remove" color="#00247d" /> */}
@@ -40,8 +49,17 @@ const HeroManage = ({ isBeatMaker = true }) => {
               RemoveSong();
             }}
           >
-            Remove
+            {t[language].heroManage.remove}
           </button>
+          {/* heroManage: {
+      removeSong: "Remove a song from your projects",
+      removeBeat: "Remove a beat from your projects",
+      remove: "remove",
+      changeVisibility: "Change the visibility of your project",
+      visibility: "Visibility",
+      editSong: "Edit a Song from one of your projects",
+      edit: "Edit",
+    }, */}
         </div>
       </div>
       <div className="grid grid-cols-3 text-white">
@@ -54,7 +72,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
           />
         </div>
         <div className="flex justify-end items-center">
-          Change the visibility of your project
+          {t[language].heroManage.changeVisibility}
         </div>
         <div className="place-self-center">
           {/* <Pulsante content="Remove" color="#00247d" /> */}
@@ -64,7 +82,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
               ModifySongVisibility();
             }}
           >
-            Visibility
+            {t[language].heroManage.visibility}
           </button>
         </div>
       </div>
@@ -78,7 +96,9 @@ const HeroManage = ({ isBeatMaker = true }) => {
           />
         </div>
         <div className="flex justify-end items-center">
-          Edit a {mediaType} from one of your projects
+          {isBeatMaker
+            ? t[language].heroManage.editBeat
+            : t[language].heroManage.editSong}
         </div>
         <div className="place-self-center">
           {/* <Pulsante content="Remove" color="#00247d" /> */}
@@ -88,7 +108,7 @@ const HeroManage = ({ isBeatMaker = true }) => {
               EditSong();
             }}
           >
-            Edit
+            {t[language].heroManage.edit}
           </button>
         </div>
       </div>

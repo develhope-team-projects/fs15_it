@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "./LanguageContext";
+import translations from "../translations";
+
 export default function Footer() {
+  const { language } = useLanguage();
+  const t: any = translations;
+
   return (
     <>
       <footer className=" text-white font-body px-36 py-12 bg-gradient-to-b from-[#0c111c] to-black max-sm:text-center">
@@ -34,41 +40,41 @@ export default function Footer() {
                 SoundBridge
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                About us
+                {t[language].footer.aboutUs}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Carriers
+                {t[language].footer.careers}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Merch
+                {t[language].footer.merch}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Blog
+                {t[language].footer.blog}
               </Link>
             </ul>
           </div>
           <div className="max-sm:hidden">
             <ul className="flex flex-col md:ml-6">
               <Link href={"/"} className="text-xl mb-4 font-semibold">
-                Support
+                {t[language].footer.support}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Pricing
+                {t[language].footer.pricing}
               </Link>
               <Link href={"/"} className="footer-links mb-2 max-sm:hidden">
-                Help Desk
+                {t[language].footer.helpDesk}
               </Link>
               <Link href={"/"} className="footer-links mb-2 max-sm:hidden">
-                Cookies preferencies
+                {t[language].footer.cookiesPreferences}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Sign up
+                {t[language].footer.signUp}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Sign in
+                {t[language].footer.signIn}
               </Link>
               <Link href={"/"} className="footer-links mb-2">
-                Contact us
+                {t[language].footer.contactUs}
               </Link>
             </ul>
           </div>
@@ -131,7 +137,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-12 flex justify-center">
-          2023 SoundBridge Version 1.0.1
+          {t[language].footer.copyright}
         </p>
       </footer>
     </>

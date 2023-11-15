@@ -9,6 +9,8 @@ import img2 from "@/../public/kendrickllamar.jpg";
 import img3 from "@/../public/Metro_Boomin_Not_All_Heroes_Wear_Capes.png";
 import img4 from "@/../public/kidcudikidsseeghost.jpg";
 import NewsLetterSection from "../components/NewsLetterSection";
+import { useLanguage } from "../components/LanguageContext";
+import translations from "../translations";
 
 const cardData = [
   { content: "Drake-ABC", cover: img1.src, slider: "24" },
@@ -18,6 +20,9 @@ const cardData = [
 ];
 
 export default function Home() {
+  const { language } = useLanguage();
+  const t: any = translations;
+
   return (
     <div className="m-0 p-0 box-border">
       <div className=" text-white font-body h-screen text-default m-0">
@@ -34,12 +39,14 @@ export default function Home() {
         {/* TITLES */}
         <div className="section-homepage w-1/2  p-8">
           <div className="title-homepage">
-            <h1 className="text-header">Where music meets collaboration</h1>
-            <h2 className="text-sub-header mt-7">Join the revolution</h2>
+            <h1 className="text-header">{t[language].hero.header}</h1>
+            <h2 className="text-sub-header mt-7">
+              {t[language].hero.subHeader}
+            </h2>
           </div>
         </div>
       </div>
-      <HeroMockup />
+      <HeroMockup language={language} />
 
       <div className=" flex flex-col background-image min-h-[270px] max-sm:hidden">
         <div className="background-image absolute w-full  m-0 p-0 -z-10  ">
@@ -52,7 +59,7 @@ export default function Home() {
           />
         </div>
         <Typography className="text-white text-7xl p-12 text-center text-shadow-lg shadow-gray-500 max-sm:p-6 max-sm:text-4xl">
-          Discover New Artists
+          {t[language].cardsSection.title}
         </Typography>
         {/* Aggiunto margin bottom per distanziare componente tuo da quello di Alessandro,
       unire in un unico div l'img di background e
@@ -70,7 +77,7 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-gradient-to-t from-[#0c111c] to-black">
-        <NewsLetterSection />
+        <NewsLetterSection language={language} />
       </div>
     </div>
   );
