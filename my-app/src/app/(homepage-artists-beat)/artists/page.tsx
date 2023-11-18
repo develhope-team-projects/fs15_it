@@ -67,7 +67,7 @@ export default function HomepageArtisti() {
             "/artists/favorite-genres",
             "/artists/saved-songs",
             "/artists/upload-songs",
-            "/artists/manage-songs",
+            // "/artists/manage-songs",
           ]}
           language={language}
         />
