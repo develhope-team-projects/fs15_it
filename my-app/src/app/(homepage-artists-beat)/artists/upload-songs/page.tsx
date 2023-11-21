@@ -35,56 +35,56 @@ import translations from "@/app/translations";
 // ];
 
 export default function UploadSongs() {
-  const { language } = useLanguage();
-  const t: any = translations;
+  //   const { language } = useLanguage();
+  //   const t: any = translations;
 
-  const items: Array<string> = [
-    t[language].uploadSongsPage.title,
-    t[language].uploadSongsPage.duration,
-    t[language].uploadSongsPage.downloads,
-  ];
+  //   const items: Array<string> = [
+  //     t[language].uploadSongsPage.title,
+  //     t[language].uploadSongsPage.duration,
+  //     t[language].uploadSongsPage.downloads,
+  //   ];
 
-  const texts = [
-    {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].uploadSongsPage.title,
-      ],
-      col2: "2:38",
-      col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
-    },
-    {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].uploadSongsPage.title,
-      ],
-      col2: "2:38",
-      col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
-    },
-    {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].uploadSongsPage.title,
-      ],
-      col2: "2:38",
-      col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
-    },
-    {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        t[language].uploadSongsPage.title,
-      ],
-      col2: "2:38",
-      col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
-    },
-  ];
+  //   const texts = [
+  //     {
+  //       col1: [
+  //         <Image src={icon1} alt="" width={60} height={60} />,
+  //         t[language].uploadSongsPage.title,
+  //       ],
+  //       col2: "2:38",
+  //       col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
+  //     },
+  //     {
+  //       col1: [
+  //         <Image src={icon1} alt="" width={60} height={60} />,
+  //         t[language].uploadSongsPage.title,
+  //       ],
+  //       col2: "2:38",
+  //       col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
+  //     },
+  //     {
+  //       col1: [
+  //         <Image src={icon1} alt="" width={60} height={60} />,
+  //         t[language].uploadSongsPage.title,
+  //       ],
+  //       col2: "2:38",
+  //       col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
+  //     },
+  //     {
+  //       col1: [
+  //         <Image src={icon1} alt="" width={60} height={60} />,
+  //         t[language].uploadSongsPage.title,
+  //       ],
+  //       col2: "2:38",
+  //       col3: ["987986678", <Image src={icon2} alt="" width={40} height={40} />],
+  //     },
+  //   ];
   return (
-    <>
-      <DenseAppBar
+    <div>
+      {/* <DenseAppBar
         content={t[language].navbarMulti.uploadSongs}
         link="/artists"
-      />
-      <HeroMultisection items={items} texts={texts} />
-    </>
+      /> */}
+      <HeroMultisection />
+    </div>
   );
 }

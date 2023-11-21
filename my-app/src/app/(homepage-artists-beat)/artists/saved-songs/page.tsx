@@ -55,26 +55,17 @@ export default function SavedSongs() {
       col3: ["2:56", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        "Sere Nere",
-      ],
+      col1: [<Image src={icon1} alt="" width={60} height={60} />, "Sere Nere"],
       col2: "Tiziano Ferro",
       col3: ["3:45", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        "Mask Off",
-      ],
+      col1: [<Image src={icon1} alt="" width={60} height={60} />, "Mask Off"],
       col2: "Future",
       col3: ["4:35", <Image src={icon2} alt="" width={40} height={40} />],
     },
     {
-      col1: [
-        <Image src={icon1} alt="" width={60} height={60} />,
-        "A Lot",
-      ],
+      col1: [<Image src={icon1} alt="" width={60} height={60} />, "A Lot"],
       col2: "21 Savage",
       col3: ["3:35", <Image src={icon2} alt="" width={40} height={40} />],
     },
