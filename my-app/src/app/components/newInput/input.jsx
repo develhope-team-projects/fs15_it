@@ -18,7 +18,9 @@ export default function Input() {
       body: JSON.stringify(data),
     });
     if (res.status === 200) {
-      setData({});
+      setData({
+        mail: "",
+      });
     }
   };
   return (
