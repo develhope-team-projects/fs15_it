@@ -1,107 +1,85 @@
 "use client";
 
-// Props
+import { useRef, useState } from "react";
+import ReactPlayer from "react-player";
 
-interface MyComponentProps {
-  items: string[];
-  texts: textProp[];
-}
+export default function HeroMultisection() {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [playlist, setPlaylist] = useState<File[]>([]);
+  const [selectedAudio, setSelectedAudio] = useState<File | null>(null);
+  const playerRef = useRef<ReactPlayer | null>(null);
 
-// Table Props
+  const handleAudioFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      setIsPlaying(false);
+      setPlaylist((prevPlaylist) => [...prevPlaylist, file]);
+    }
+  };
 
-interface textProp {
-  col1: any[];
-  col2: string;
-  col3: any[];
-}
+  const handleAudioItemClick = (selected: File) => {
+    setSelectedAudio(selected);
+    setIsPlaying(false);
+  };
 
-export default function HeroMultisection({ items, texts }: MyComponentProps) {
+  const handlePlay = () => {
+    setIsPlaying(true);
+    if (playerRef.current) {
+      playerRef.current.seekTo(0);
+    }
+  };
+
   return (
     <div className="hero bg-[#0c111c] flex justify-center">
-      <div className=" flex justify-between p-6 text-white w-3/4 max-lg:w-full max-sm:flex-col">
-        <div className="container1 flex flex-col ">
-          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-8 max-lg:text-3xl text-center">
-            {items[0]}
-          </div>
-          <div className="col1  flex flex-col items-start">
-            {texts.map((text, index) => (
-              <div
-                className="text flex justify-center  gap-4 items-center text-default mb-7"
-                key={index}
-              >
-                {text.col1}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="container2 flex flex-col">
-          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center">
-            {items[1]}
-          </div>
-          <div className="col2">
-            {texts.map((text, index) => (
-              <div
-                className="text flex items-center justify-center text-default mb-[63px] mt-[10px]"
-                key={index}
-              >
-                {text.col2}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="container3 flex flex-col">
-          <div className="header text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center">
-            {items[2]}
-          </div>
-          <div className="col3 ">
-            {texts.map((text, index) => (
-              <div
-                className="text flex justify-center gap-4 items-center text-default mb-12 mt-1"
-                key={index}
-              >
-                {text.col3}
-              </div>
-            ))}
-          </div>
+      <div className=" flex justify-between p-6 text-white max-lg:w-full max-sm:flex-col">
+        <div className="audio-upload flex flex-col">
+          <label
+            className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center"
+            htmlFor="audio"
+          >
+            Importa la tua canzone
+          </label>
+          <input
+            type="file"
+            accept="audio/*"
+            onChange={handleAudioFileChange}
+            id="audio"
+          />
+          <h1 className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center mt-5">
+            Seleziona e ascolta la tua canzone
+          </h1>
+          <h2 className="text-header text-center mb-8">Playlist:</h2>
+          {playlist.length > 0 && (
+            <div className="playlist flex gap-6">
+              <ul className="flex flex-col gap-4">
+                {playlist.map((song, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleAudioItemClick(song)}
+                    className={` items-center gap-4 justify-start cursor-pointer ${
+                      selectedAudio === song ? "text-purple-400" : ""
+                    }`}
+                  >
+                    {song.name}
+                  </li>
+                ))}
+              </ul>
+              {selectedAudio && (
+                <div className="audio-player self-center">
+                  <ReactPlayer
+                    url={URL.createObjectURL(selectedAudio)}
+                    controls
+                    playing={isPlaying}
+                    onPlay={handlePlay}
+                    width={"400px"}
+                    height={"50px"}
+                  />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-}
-
-// Esempio:
-
-// import Image from "next/image";
-// import icon1 from "../../public/user-icon.png";
-// import icon2 from "../../public/bx-download.svg";
-
-// import HeroMultisection from "./components/Hero-multisection";
-
-// const items: Array<string> = ["Titolo Brano", "Durata", "Downloads"];
-
-// const texts = [
-//   {
-//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
-//     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
-//   },
-//   {
-//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
-//     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
-//   },
-//   {
-//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
-//     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
-//   },
-//   {
-//     col1: [<Image src={icon1} alt="" width={60} height={60} />, "Titolo Brano"],
-//     col2: "2:38",
-//     col3: ["87897868", <Image src={icon2} alt="" width={40} height={40} />],
-//   },
-// ];
-
-{
-  /* <HeroMultisection items={items} texts={texts} /> */
 }
