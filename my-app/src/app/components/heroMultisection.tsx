@@ -30,8 +30,8 @@ export default function HeroMultisection() {
   };
 
   return (
-    <div className="hero bg-[#0c111c] flex justify-center">
-      <div className=" flex justify-between p-6 text-white max-lg:w-full max-sm:flex-col">
+    <div className="hero bg-[#0c111c] flex justify-center max-lg:h-full ">
+      <div className=" flex justify-between p-6 text-white max-lg:w-full max-lg:flex-col mt-14">
         <div className="audio-upload flex flex-col">
           <label
             className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center"
@@ -45,18 +45,20 @@ export default function HeroMultisection() {
             onChange={handleAudioFileChange}
             id="audio"
           />
-          <h1 className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center mt-5">
+          <h1 className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center mt-14">
             Seleziona e ascolta la tua canzone
           </h1>
-          <h2 className="text-header text-center mb-8">Playlist:</h2>
+          <h2 className="text-sub-header font-body text-center mb-8">
+            Playlist:
+          </h2>
           {playlist.length > 0 && (
-            <div className="playlist flex gap-6">
-              <ul className="flex flex-col gap-4">
+            <div className="playlist flex gap-6 max-md:flex-col ">
+              <ul className="flex flex-col gap-8 ">
                 {playlist.map((song, index) => (
                   <li
                     key={index}
                     onClick={() => handleAudioItemClick(song)}
-                    className={` items-center gap-4 justify-start cursor-pointer ${
+                    className={`flex items-center  gap-4 justify-start cursor-pointer max-md:text-center ${
                       selectedAudio === song ? "text-purple-400" : ""
                     }`}
                   >
@@ -71,7 +73,7 @@ export default function HeroMultisection() {
                     controls
                     playing={isPlaying}
                     onPlay={handlePlay}
-                    width={"400px"}
+                    width={"350px"}
                     height={"50px"}
                   />
                 </div>
