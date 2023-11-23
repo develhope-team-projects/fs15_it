@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "src/app/components/CardAnalytics.jsx",
     "src/app/components/newInput/input.jsx"
-  ],
+, "src/app/api/user/route.js"  ],
   "exclude": ["node_modules"]
 }

@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.11",
     "@prisma/client": "^5.6.0",
     "bcrypt": "^5.1.1",
+    "joi": "^17.11.0",
     "js-cookie": "^3.0.5",
     "next": "latest",
     "prisma": "^5.6.0",

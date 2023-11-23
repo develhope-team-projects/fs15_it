@@ -1,7 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { POST } from "@/app/api/user/route";
 
 export default function LoginForm() {
   const [data, setData] = useState({
@@ -26,7 +26,7 @@ export default function LoginForm() {
     }
   };
 
-  const handleChange = (event: any) => {
+  const handleChange = async (event: any) => {
     const value = event.target.id;
 
     if (value === "singer") {
@@ -36,6 +36,13 @@ export default function LoginForm() {
     } else {
       setData({ singer: false, beatmaker: false, disabled: true });
     }
+    const response = await fetch("/api/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
   };
   return (
     <>
@@ -89,7 +96,7 @@ export default function LoginForm() {
             type="submit"
             className="bg-white text-black w-1/3 rounded-2xl self-center font-body border-[5px] border-s-red-200 "
             disabled={data.disabled}
-            onClick={handleCLick}
+            onClick={handleChange}
           >
             Submit
           </button>
