@@ -66,7 +66,12 @@ export default function Form() {
               </Select>
             </Grid>
             <Grid xs={12} item>
-              <Button type="submit" variant="contained" fullWidth>
+              <Button
+                type="submit"
+                onClick={sendUser}
+                variant="contained"
+                fullWidth
+              >
                 Submit
               </Button>
             </Grid>
