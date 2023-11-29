@@ -2,13 +2,13 @@ import { db } from "@/app/lib/db";
 import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
 
-export async function POST(request, response) {
+export async function POST(request) {
   try {
     const body = await request.json();
-    const { data } = body;
+    const { name, password, role } = body;
 
     const nameAlreadyUsed = await db.user.findUnique({
-      where: { name: data.name },
+      where: { name: name },
     });
     if (nameAlreadyUsed) {
       return NextResponse.json(
@@ -17,13 +17,12 @@ export async function POST(request, response) {
       );
     }
 
-    const randomPsw = await hash(data.password, 10);
+    const randomPsw = await hash(password, 10);
     const newUser = await db.user.create({
       newData: {
         name,
         password: randomPsw,
-        singer,
-        beatmaker,
+        role,
       },
     });
     const { password: newUserPassword, ...rest } = newUser;
