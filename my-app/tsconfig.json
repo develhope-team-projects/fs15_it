@@ -28,7 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/components/CardAnalytics.jsx",
-    "src/app/components/newInput/input.jsx"
-, "src/app/api/user/route.js", "src/app/(homepage-artists-beat)/log-in/page.tsx"  ],
+    "src/app/components/newInput/input.jsx",
+    "src/app/api/user/route.js", "src/app/(homepage-artists-beat)/log-in/page.tsx",
+    "src/app/components/form/form.jsx"
+  ],
   "exclude": ["node_modules"]
 }
