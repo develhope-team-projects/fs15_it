@@ -10,19 +10,24 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 export default function Form() {
-  const sendUser = async () => {
+  const sendUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(name, password, role),
-    });
+    try {
+      await fetch("/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, password, role }),
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
-  const [name, setName] = useState();
-  const [password, setPassword] = useState();
-  const [role, setRole] = useState();
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("singer");
 
   return (
     <Card style={{ maxWidth: 450, margin: "0 auto" }}>
@@ -67,7 +72,7 @@ export default function Form() {
             </Grid>
             <Grid xs={12} item>
               <Button
-                type="submit"
+                type="button"
                 onClick={sendUser}
                 variant="contained"
                 fullWidth

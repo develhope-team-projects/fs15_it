@@ -19,7 +19,7 @@ export async function POST(request) {
 
     const randomPsw = await hash(password, 10);
     const newUser = await db.user.create({
-      newData: {
+      data: {
         name,
         password: randomPsw,
         role,
