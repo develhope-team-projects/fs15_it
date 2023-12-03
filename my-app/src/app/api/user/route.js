@@ -11,6 +11,7 @@ export async function POST(request) {
       where: { name: name },
     });
     if (nameAlreadyUsed) {
+      alert("Username already exists");
       return NextResponse.json(
         { user: null, message: "Name already exists" },
         { status: 409 }

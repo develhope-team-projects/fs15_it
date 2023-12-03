@@ -1,4 +1,5 @@
 import { Card } from "@mui/joy";
+import { useRouter } from "next/navigation";
 import {
   Button,
   CardContent,
@@ -10,6 +11,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 export default function Form() {
+  const router = useRouter();
   const sendUser = async (e) => {
     e.preventDefault();
     try {
@@ -20,6 +22,11 @@ export default function Form() {
         },
         body: JSON.stringify({ name, password, role }),
       });
+      if (role === "singer") {
+        router.push("/artists");
+      } else {
+        router.push("/beatmakers");
+      }
     } catch (err) {
       console.log(err);
     }

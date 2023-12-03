@@ -11,10 +11,11 @@ export async function POST(req) {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: String(mail),
-      subject: "Hello world",
-      react: EmailTemplate({ firstName: "John" }),
+      subject: "Newsletter SoundBridge",
+      react: EmailTemplate({ firstName: mail }),
     });
     if (data.status === "success") {
+      console.log("email sent");
       return NextResponse.json({
         message: "Email Successfully sent",
       });

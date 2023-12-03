@@ -24,9 +24,19 @@ export default function Input() {
     }
   };
   return (
-    <div className="flex">
-      <input type="email" value={data.mail} onChange={handleForm}></input>
-      <button onClick={sendEmail} className="bg-white rounded-xl">
+    <div className="flex flex-col mt-4">
+      <input
+        type="email"
+        value={data.mail}
+        onChange={handleForm}
+        placeholder="insert your email"
+        className="min-w-[180px] min-h-[30px]
+        mb-4"
+      ></input>
+      <button
+        onClick={sendEmail}
+        className="bg-white rounded-3xl w-1/4 flex self-center p-1 min-w-[60px] hover:bg-[#626A62]"
+      >
         Submit
       </button>
     </div>
