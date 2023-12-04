@@ -40,41 +40,51 @@ export default function Form() {
   const [role, setRole] = useState("singer");
 
   return (
-    <form>
-      <input
-        label="email"
-        placeholder="Enter your email *"
-        required
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        type="email"
-      />
-      <input
-        label="password"
-        placeholder="Enter your password *"
-        fullWidth
-        required
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        type="password"
-      />
-      <label htmlFor="demo-simple-select-label">Role </label>
-      <select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        label="role "
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
-        placeholder=""
-        required
-      >
-        <option value="singer">Singer</option>
-        <option value="beatmaker">Beatmaker</option>
-      </select>
-
-      <button type="submit" onClick={sendUser}>
-        Submit
-      </button>
-    </form>
+    <div className="bg-white  max-w-[300px] mx-auto flex items-center justify-center p-8 shadow-2xl shadow-black rounded-[2rem]">
+      <form className="flex flex-col items-center gap-4 justify-center p-3 ">
+        <input
+          label="email"
+          placeholder="Enter your email *"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="email"
+          className="text-center p-2 outline-none"
+        />
+        <input
+          label="password"
+          placeholder="Enter your password *"
+          fullWidth
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          className="text-center p-2 outline-none"
+        />
+        <div className=" flex flex-col text-center gap-2 items-center">
+          <label htmlFor="demo-simple-select-label">Role </label>
+          <select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="role "
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            placeholder=""
+            required
+            className="text-center p-1 outline-none"
+          >
+            <option value="singer">Singer</option>
+            <option value="beatmaker">Beatmaker</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          onClick={sendUser}
+          className="border bg-gray-300 hover:bg-gray-500 text-black font-bold rounded-2xl p-2"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }

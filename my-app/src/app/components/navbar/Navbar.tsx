@@ -43,12 +43,12 @@ export default function Navbar() {
         <div className="flex mr-1 sm:mr-4 items-center">
           <div className="flex mr-2">
             <Link
-              href="/sign-in"
+              href="/sign-up"
               className="mx-6 items-center z-50 hidden sm:flex text-white hover:text-blue-400 transition-colors ease-in-out"
             >
               {t[language].navbar.signUp}
             </Link>
-            <div className="hidden sm:block">
+            {/* <div className="hidden sm:block">
               <Link href="/log-in">
                 <Btn
                   content={t[language].navbar.login}
@@ -56,7 +56,7 @@ export default function Navbar() {
                   colorhover="button-hover"
                 ></Btn>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Language flags Select  */}
