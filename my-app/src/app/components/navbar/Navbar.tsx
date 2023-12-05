@@ -23,10 +23,10 @@ export default function Navbar() {
   const t: any = translations;
 
   return (
-    <div className="z-10">
-      <div className="navbar relative flex items-center py-3 justify-between">
-        <div className="navbar-background absolute bg-black opacity-80 h-full w-full p-0 m-0 left-0 shadow-sm shadow-zinc-500"></div>
-        <div className="flex items-center ml-1 sm:ml-8">
+    <div className="z-10 ">
+      <div className="navbar relative flex items-center py-3 justify-between bg-[#0C0F18] p-4 ">
+        <div className="navbar-background absolute bg-gradient-to-br from-[#007984] h-full w-full p-8 left-0 rounded-xl my-4"></div>
+        <div className="flex items-center ml-1 sm:ml-8 ">
           {/* Hamburger Menu is visible in mobile layout only */}
           <HamburgerMenu
             menuItems={[
@@ -44,7 +44,7 @@ export default function Navbar() {
           <div className="flex mr-2">
             <Link
               href="/sign-up"
-              className="mx-6 items-center z-50 hidden sm:flex text-white hover:text-blue-400 transition-colors ease-in-out"
+              className="mx-6 items-center z-50 hidden sm:flex text-white hover:bg-blue-600 font-semibold bg-[#006171] rounded-3xl p-2 transition-colors ease-in-out"
             >
               {t[language].navbar.signUp}
             </Link>

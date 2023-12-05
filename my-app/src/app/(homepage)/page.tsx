@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="m-0 p-0 box-border ">
-      <div className=" text-white font-body h-screen text-default m-0">
+      <div className=" text-white font-body h-screen text-default m-0 w-full">
         <div className="background-image absolute h-full w-full m-0 p-0 -z-10">
           <img
             src="/background top image.jpg"
