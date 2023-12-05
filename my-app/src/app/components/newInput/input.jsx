@@ -30,12 +30,11 @@ export default function Input() {
         value={data.mail}
         onChange={handleForm}
         placeholder="insert your email"
-        className="min-w-[180px] min-h-[30px] text-center p-2 outline-none
-        mb-4"
+        className="min-w-[180px] min-h-[30px] text-center p-4 outline-none mb-4 shadow-blue-100 shadow-md rounded-3xl"
       ></input>
       <button
         onClick={sendEmail}
-        className="bg-white rounded-3xl w-fit-content flex self-center p-1 min-w-[60px] hover:bg-blue-200 font-semibold"
+        className="bg-white rounded-full w-fit-content flex self-center p-2 min-w-[60px] hover:bg-blue-200 font-semibold"
       >
         Subscribe
       </button>
