@@ -1,9 +1,15 @@
 "use client";
 
+import React from "react";
 import { useRef, useState } from "react";
 import ReactPlayer from "react-player";
+import { useLanguage } from "./LanguageContext";
+import translations from "../translations";
 
 export default function HeroMultisection() {
+  const { language } = useLanguage();
+  const t: any = translations;
+
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [playlist, setPlaylist] = useState<File[]>([]);
   const [selectedAudio, setSelectedAudio] = useState<File | null>(null);
@@ -37,7 +43,7 @@ export default function HeroMultisection() {
             className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center"
             htmlFor="audio"
           >
-            Importa la tua canzone
+            {t[language].uploadSongsPage.importSong}
           </label>
           <input
             type="file"
@@ -46,7 +52,7 @@ export default function HeroMultisection() {
             id="audio"
           />
           <h1 className="text-4xl bg-blue-800 rounded-3xl p-5 mb-10 max-lg:text-3xl text-center mt-14">
-            Seleziona e ascolta la tua canzone
+            {t[language].uploadSongsPage.selectSong}
           </h1>
           <h2 className="text-sub-header font-body text-center mb-8">
             Playlist:
