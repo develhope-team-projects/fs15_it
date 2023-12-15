@@ -31,7 +31,8 @@
     "src/app/components/newInput/input.jsx",
     "src/app/api/user/route.js",
     "src/app/(sign-up)/sign-up/page.tsx",
-    "src/app/components/form/form.jsx"
+    "src/app/components/form/form.jsx",
+    "src/store.ts"
   ],
   "exclude": ["node_modules"]
 }
