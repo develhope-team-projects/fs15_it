@@ -3,6 +3,7 @@ import "@/../src/app/globals.css";
 import { Inter } from "next/font/google";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../components/LanguageContext";
+import { CardProvider } from "../components/CardContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -14,8 +15,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <LanguageProvider>
-          {children}
-          <Footer />
+          <CardProvider>
+            {children}
+            <Footer />
+          </CardProvider>
         </LanguageProvider>
       </body>
     </html>

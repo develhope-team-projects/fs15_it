@@ -13,6 +13,8 @@ import translations from "../../translations";
 
 import Image from "next/image";
 
+import { CardProvider, useCardContext } from "../../components/CardContext";
+
 import MoneyImage from "../../../../public/Money_1973.jpg";
 import HeartImage from "../../../../public/heart-solid-24.png";
 import PinkFloyd from "../../../../public/pink floyd.jpeg";
@@ -41,7 +43,6 @@ export default function HomepageArtisti() {
   const { isSidebarOpen, toggleSidebar } = UseSidebar();
   const { language } = useLanguage();
   const t: any = translations;
-  // const [songs, setSongs] = useState([]);
   const [songs, setSongs] = useState<
     Array<{ title: string; artist: string; Image: any; imageHeart: any }>
   >([]);
@@ -132,12 +133,15 @@ export default function HomepageArtisti() {
     },
   ];
 
+  const { updateCardInfo } = useCardContext();
+
   const handleCardClick = (song: {
     title: string;
     artist: string;
     Image: any;
     imageHeart: any;
   }) => {
+    updateCardInfo(song);
     setSongs((prevSongs) => [
       ...prevSongs,
       {
