@@ -43,9 +43,6 @@ export default function HomepageArtisti() {
   const { isSidebarOpen, toggleSidebar } = UseSidebar();
   const { language } = useLanguage();
   const t: any = translations;
-  const [songs, setSongs] = useState<
-    Array<{ title: string; artist: string; Image: any; imageHeart: any }>
-  >([]);
 
   const cardsArray = [
     {
@@ -142,20 +139,7 @@ export default function HomepageArtisti() {
     imageHeart: any;
   }) => {
     updateCardInfo(song);
-    setSongs((prevSongs) => [
-      ...prevSongs,
-      {
-        title: song.title,
-        artist: song.artist,
-        Image: song.Image,
-        imageHeart: song.imageHeart,
-      },
-    ]);
   };
-
-  useEffect(() => {
-    console.log(songs);
-  }, [songs]);
 
   return (
     <>

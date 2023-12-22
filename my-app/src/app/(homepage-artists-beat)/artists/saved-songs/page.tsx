@@ -31,11 +31,7 @@ export default function SavedSongs() {
                 <p className="text-gray-600">{info.title}</p>
               </div>
               <div className="flex justify-end w-full">
-                <Image
-                  className="cursor-pointer"
-                  src={info.imageHeart}
-                  alt=""
-                ></Image>
+                <Image src={info.imageHeart} alt=""></Image>
               </div>
             </div>
           </div>
