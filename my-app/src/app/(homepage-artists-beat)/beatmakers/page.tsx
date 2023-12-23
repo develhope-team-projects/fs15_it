@@ -109,17 +109,6 @@ const cardsSaved = [
   },
 ];
 
-// const { updateCardInfo } = useCardContext();
-
-const handleCardClick = (song: {
-  title: string;
-  artist: string;
-  Image: any;
-  imageHeart: any;
-}) => {
-  // updateCardInfo(song);
-};
-
 export default function HomepageArtisti() {
   const { isSidebarOpen, toggleSidebar } = UseSidebar();
   const { language } = useLanguage();
@@ -146,6 +135,17 @@ export default function HomepageArtisti() {
       svg: "/revenues.svg",
     },
   ];
+  const { updateCardInfo } = useCardContext();
+
+  const handleCardClick = (song: {
+    title: string;
+    artist: string;
+    Image: any;
+    imageHeart: any;
+  }) => {
+    updateCardInfo(song);
+  };
+
   return (
     <>
       <div className="flex bg-black w-full">
