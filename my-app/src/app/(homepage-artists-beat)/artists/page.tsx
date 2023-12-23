@@ -142,7 +142,7 @@ export default function HomepageArtisti() {
   };
 
   return (
-    <>
+    <div className="bg-[#0c111c]">
       <div className="flex bg-black w-full">
         <Sidebar
           userData={userData1}
@@ -186,12 +186,12 @@ export default function HomepageArtisti() {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 grid-rows-2">
+      <div className="grid grid-cols-5 grid-rows-2 max-2xl:grid-cols-4 max-2xl:grid-rows-3 max-xl:grid-cols-3 max-xl:grid-rows-4 p-2 max-lg:grid-cols-2 max-lg:justify-items-center max-sm:grid-cols-1">
         {cardsSaved.map((card, index) => (
           <div className="bg-[#0c111c] p-6">
             <div
               key={index}
-              className="bg-white border rounded-lg overflow-hidden shadow-md p-3 flex flex-col items-center text-center w-60 h-80 ml-11"
+              className="bg-white border rounded-lg overflow-hidden shadow-md p-3 flex flex-col items-center text-center w-60 h-80 ml-6"
             >
               <Image className="mb-1" src={card.Image} alt=""></Image>
               <div className="flex-grow w-full">
@@ -210,6 +210,6 @@ export default function HomepageArtisti() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
